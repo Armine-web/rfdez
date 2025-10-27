@@ -190,31 +190,158 @@ font-family: Tahoma;
 }
 
 .call a:hover{
-  color: #20c049;
-}
-
-.burger-menu{
-  width: 40px;
-}
-
-.burger-menu:hover {
-  filter: invert(48%) sepia(92%) saturate(745%) hue-rotate(81deg) brightness(95%) contrast(90%);
+   background: linear-gradient(69deg, #23813b, #77e695);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 /* main */
 .cost-btn:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   opacity: 0.9;
+  
+}
+
+/* Company Services */
+.company-services-call:hover{
+  background: linear-gradient(69deg, #23813b, #77e695);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; 
+}
+
+.company-services1, .company-services2 {
+  display: flex;
+  gap: 17px;
+}
+
+.company-services1 a, .company-services2 a{
+  font-family: Century Gothic;
+  color: #242424;
+  font-size: 24px;
+  font-weight: 400;
+  padding: 16px;
+  border: 3px solid #abe3b2;
+  border-radius: 50px;
+}
+
+.company-services2 a{
+  border: 3px solid #abbde3;
+}
+
+.company-services1 a:hover{
+  background: linear-gradient(69deg, #23813b, #abe3b2);
+  color: #ffffff;
+}
+
+.company-services2 a:hover{
+  background: linear-gradient(69deg, #7c93c3, #abbde3);
+  color: #ffffff;
+}
+
+/* burger popup */
+.menu-window.popup {
+  position: absolute;
+  top: 110px;
+  padding: 60px 0;
+  left: 0px;
+  right: 0px;
+  height: auto;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  border-bottom: 5px solid #23813b;
+  z-index: 1000;
+}
+
+.menu-window.popup.active {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.burger-icon {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.burger-menu:hover {
+  filter: invert(48%) sepia(92%) saturate(745%) hue-rotate(81deg) brightness(95%) contrast(90%);
+}
+
+.burger-menu {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.burger-icon {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.burger-menu.active .burger-icon {
+  transform: rotate(90deg);
+
+}
+
+/* services */
+.dezinfekciya-item:hover {
+  background: linear-gradient(29deg, #539267, #51ac4d);
+}
+
+.dezinfekciya-item:hover img{
+  filter: brightness(0) invert(1); 
+}
+
+.dezinfekciya-item:hover h3, .dezinfekciya-item:hover h4, .dezinfekciya-item:hover p {
+  color: #ffffff !important;
+}
+
+.service-link:hover {
+  border-image: linear-gradient(69deg, #23813b, #abe3b2) 1;
+  background: linear-gradient(69deg, #23813b, #77e695);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  filter: invert(48%) sepia(92%) saturate(745%) hue-rotate(81deg) brightness(95%) contrast(90%);
+ 
+}
+
+/* more services */
+.more-services-content {
+  max-height: 0; 
+  overflow: hidden;       
+  transition: max-height 0.5s ease; 
+}
+
+.dezinfekciya-more-services.active .more-services-content {
+  max-height: 5000px;
+  overflow: auto;
+}
+
+.dezinfekciya-more-services.active .services-hr{
+  display: none;
+}
+
+.dezinfekciya-more-services.active .service-link img{
+  transform: rotate(180deg);
 }
 
 
 
-
-
-
-
  @media (max-width: 1763px){
-  .container{
+  .container{ 
     padding: 40px 100px;
   }
   .flug {
@@ -235,6 +362,10 @@ font-family: Tahoma;
   .main-img{
     opacity: 0.7;
   }
+
+  .services-hr{
+    right: -100px !important;
+  }
 } 
 
 @media (max-width: 1556px){
@@ -244,6 +375,10 @@ font-family: Tahoma;
 
   .main-img{
     right: 60px!important;
+  }
+
+   .services-hr{
+    right: -50px !important;
   }
   
 }
@@ -263,6 +398,18 @@ font-family: Tahoma;
 }
 
 @media (max-width: 1445px){
+  .menu-window.popup{
+    top:30px;
+  }
+
+  
+  .burger-menu.active {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    transform: scale(1.1);
+  }
+
   header{
     flex-wrap: wrap;
   }
@@ -278,6 +425,65 @@ font-family: Tahoma;
   .working-now-wrapper{
     display: none;
   }
+
+  .dezinfekciya-heding{
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .dezinfekciya-wrapper{
+    gap: 35px !important;
+  }
+}
+
+@media (max-width: 1214px){
+  .menu-window.popup{
+    height: auto;
+    padding: 50px;
+  }
+
+  .company-services{
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 16px !important;
+    
+  }
+  .company-services1, .company-services2{
+    flex-direction: column;
+    text-align: center;
+    width: 40%;
+  }
+
+
+  .company-services2:last-child{
+    flex-direction: row !important; 
+    width: 100% ;
+  }
+
+  .company-services2:last-child a{ 
+    display: inline-block;
+    width: 40% ;
+  }
+}
+
+@media (max-width: 1187px){
+  .company-services1, .company-services2, .company-services2:last-child a{
+    width: 48% ;
+  }
+
+  .company-services1 a, .company-services2 a,.company-services2:last-child a {
+    font-size: 20px;
+    padding: 16px 8px !important;
+  }
+
+  .dezinfekciya-wrapper{
+    width: 85% !important;
+    justify-self: center;
+    align-items: center;
+
+  }
+     
 }
 
 @media (max-width: 950px){
@@ -290,7 +496,47 @@ font-family: Tahoma;
     width: 455px!important;
     height: auto!important;
   }
+
+  .company-services-wrapper h2{
+    padding: 150px 0 40px 0 !important;
+    font-size: 40px  !important;
+  }
+
+   .company-services-wrapper p{
+    font-size: 20px  !important;
+  }
+
+  .company-services1 a, .company-services2 a,.company-services2:last-child a{
+    font-size: 16px;
+  }
+
+  .dezinfekciya-item{
+    gap: 80px;
+  }
+
+  .dezinfekciya-item a{
+    gap: 60px !important;
+  }
+
+  .dezinfekciya-item .contnt-wrapper {
+    width: 300px !important;
+  }
+
+  .dezinfekciya-wrapper{
+    justify-content: center !important;
+  }
+
+  .dezinfekciya-heding h2{
+    font-size: 40px !important;
+  }
+
+  .dezinfekciya-heding p{
+    font-size: 20px;
+    text-align: center;
+  }
+
 }
+
 
 @media (max-width: 774px){
   .cost-btn-wrapper {
@@ -300,6 +546,14 @@ font-family: Tahoma;
   .cost-btn{
     padding: 24px !important;
     font-size: 20px !important;
+  }
+
+    .company-services1, .company-services2, .company-services2:last-child a{
+    width: 100%;
+  }
+
+  .company-services2:last-child{
+    flex-direction: column !important;
   }
 }
 
@@ -345,6 +599,15 @@ font-family: Tahoma;
   gap: 40px !important;
  }
 
+ .services-hr{
+  display: none;
+ }
+
+ .dezinfekciya-more-services{
+  display: flex;
+  justify-content: center;
+ }
+
 }
 
 @media (max-width: 548px){
@@ -365,20 +628,41 @@ font-family: Tahoma;
     padding: 18px !important;
     font-size: 18px !important;
   }
+
+  .dezinfekciya-heding h2{
+    font-size: 32px !important;
+  }
+
+  .service-link{
+    font-size: 12px !important;
+    text-align: center;
+    padding: 10px !important;
+
+  }
 }
 
 @media (max-width: 474px){
   .header-item1{
     flex-direction: column;
   }
+
   .disinfection-services{
     text-align: center;
     width: 100%;
     padding: 0;
     border: none;
   }
+
   .header-item2{
     align-items: center;
+  }
+
+  .dezinfekciya-item a{
+    gap: 20px !important;
+  }
+
+  .dezinfekciya-item h3{
+    font-size: 24px !important;
   }
 }
 
