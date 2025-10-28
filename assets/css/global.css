@@ -335,8 +335,8 @@ header {
 
 /* more services */
 .more-services-content {
-  max-height: 0; 
-  overflow: hidden;       
+  max-height: 0;
+  overflow: hidden;
   transition: max-height 0.5s ease;
 }
 
@@ -345,10 +345,10 @@ header {
   overflow: auto;
 }
 
-/* .dezinfekciya-more-services.active .services-hr {
+.dezinfekciya-more-services.active .services-hr {
   height: 0 !important;
   background-color: #ffffff !important;
-} */
+}
 
 .dezinfekciya-more-services.active .service-link img {
   transform: rotate(180deg);
@@ -405,6 +405,112 @@ header {
   display: inline-block;
 }
 
+/* quiz */
+.quiz-option img {
+  filter: brightness(0) invert(1)
+}
+
+.quiz-option:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.quiz-option:hover img {
+  transform: rotate(180deg);
+}
+
+.quiz-prev:hover {
+  background: linear-gradient(69deg, #23813b, #77e695);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.quiz2 {
+  display: none;
+}
+
+.quiz3 {
+  display: none;
+}
+
+.arrow-left img {
+  transform: rotate(180deg);
+}
+
+.quiz-towns {
+  display: flex;
+  align-items: center;
+  width: 1050px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 100px;
+  height: 140px;
+}
+
+.quiz-town-connetn {
+  display: flex;
+  flex-wrap: wrap;
+  transition: transform 0.3s ease;
+  width: 90%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.quiz-town-connetn div {
+  flex: 0 0 calc(25% - 7.5px);
+  margin-bottom: 10px;
+  padding: 10px 5px;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Century Gothic;
+  font-size: 26px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-town-connetn div img{
+  width: 20px;
+  margin-right: 5px;
+}
+
+.quiz-town-connetn>div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(43, 144, 69, 0.3);
+}
+
+.arrow-left,
+.quiz-arrow-right {
+  flex: 0 0 10%;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.arrow-left:hover img,
+.quiz-arrow-right:hover img {
+  opacity: 0.8;
+  filter: invert(48%) sepia(92%) saturate(745%) hue-rotate(81deg) brightness(95%) contrast(90%);
+  transition: filter 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1763px) {
   .container {
@@ -434,6 +540,11 @@ header {
   .services-hr {
     right: -100px !important;
   }
+
+  .why-choose-us-wrapper {
+    margin-right: -100px !important;
+    margin-left: -100 !important;
+  }
 }
 
 @media (max-width: 1556px) {
@@ -449,6 +560,11 @@ header {
     right: -50px !important;
   }
 
+  .why-choose-us-wrapper {
+    margin-right: -50px !important;
+    margin-left: -50 !important;
+  }
+
 }
 
 @media (max-width: 1456px) {
@@ -462,6 +578,24 @@ header {
 
   .header-item2 {
     width: 56%;
+  }
+
+  .why-choose-us-content-wrapper h2 {
+    font-size: 38px !important;
+  }
+
+  .why-choose-us-content-wrapper {
+    max-width: 550px !important;
+  }
+
+  .why-choose-us-content-text p {
+    font-size: 18px !important;
+    width: 240px !important;
+  }
+
+  .why-choose-us-content-text {
+    margin-top: 30px !important;
+    gap: 20px !important;
   }
 
 }
@@ -592,6 +726,41 @@ header {
     display: none !important;
   }
 
+  .why-choose-us-content-wrapper h2 {
+    font-size: 32px !important;
+  }
+
+  .why-choose-us-content-wrapper {
+    max-width: 550px !important;
+  }
+
+  .why-choose-us-content-text p {
+    font-size: 16px !important;
+    width: 240px !important;
+  }
+
+  .why-choose-us-content-text {
+    margin-top: 25px !important;
+    gap: 20px !important;
+  }
+
+  .quiz-options {
+    flex-wrap: wrap;
+    width: 65% !important;
+    gap: 60px !important;
+  }
+
+  .quiz-h3-wrapper {
+    width: 100% !important;
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .quiz-button-wrapper {
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+
 }
 
 @media (max-width: 950px) {
@@ -645,6 +814,34 @@ header {
     text-align: center;
   }
 
+  .why-choose-us-content-wrapper {
+    max-width: 550px !important;
+  }
+
+  .why-choose-us-content-text p {
+    font-size: 16px !important;
+    width: 240px !important;
+  }
+
+  .why-choose-us-content-text {
+    margin-top: 25px !important;
+    gap: 18px !important;
+    justify-content: space-between !important;
+  }
+
+  .why-chose-as-picture {
+    display: none !important;
+  }
+
+  .why-choose-us-content-wrapper h2 {
+    font-size: 32px;
+  }
+
+  .quiz-options {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
 }
 
 
@@ -658,11 +855,11 @@ header {
     font-size: 20px !important;
   }
 
-  .more-services-content{
+  .more-services-content {
     gap: 60px !important;
   }
 
-  .dezinfekciya-more-services{
+  .dezinfekciya-more-services {
     margin-top: 60px;
   }
 
@@ -734,6 +931,11 @@ header {
     flex-direction: column;
   }
 
+  .why-choose-us {
+    display: none !important;
+  }
+
+
 }
 
 @media (max-width: 548px) {
@@ -767,7 +969,11 @@ header {
   }
 
   .more-services-footer-plus {
-    display: none;
+    display: none !important;
+  }
+
+  .why-chose-as-picture {
+    display: block !important;
   }
 
 }
