@@ -613,7 +613,64 @@ header {
   z-index: 2;
 }
 
+/* fast call */
+.fast-call-image{
+  width: 100%;         
+  width: 945px;   
+  height: 100%;
+  margin-right: -170px !important;    
+}
 
+.fast-call-image img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  
+ 
+}
+
+.fast-call-btn:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  opacity: 0.9;
+}
+
+/* contacts */
+
+.tel-icon{
+  padding: 9px;
+  background: #5bb272;
+  border-radius: 15px;
+}
+
+.mail-icon{
+   background: #5bb272;
+  border-radius: 15px;
+  padding: 16px 13px;
+}
+
+.tel-wrapper:hover .tel-icon, 
+.tel-wrapper:hover .mail-icon,
+.tel-icons a:hover{
+  transform: rotate(30deg);
+  transition: transform 0.3s;
+}
+
+.tel-icons a{
+  margin: 0 32px;
+}
+
+.contact-form form input {
+  padding: 18px 24px;
+  border: none;
+  border-radius: 10px;
+}
+
+.contact-form form textarea{
+    padding: 18px 24px;
+  border: none;
+  border-radius: 10px;
+  height: 73px;
+}
 
 
 @media (max-width: 1763px) {
@@ -660,7 +717,9 @@ header {
     text-align: center;
     margin: auto;
   }
-
+.fast-call-title{
+  width: 440px !important;
+}
 
 }
 
@@ -824,6 +883,22 @@ header {
     font-size: 12px !important;
   }
 
+  .client-contnt-wrapper{
+    margin: auto;
+  }
+
+  .client-contnt-wrapper h2{
+    text-align: center;
+  }
+
+  .clients-content{
+    justify-content: center !important;
+  }
+
+  .fast-call-wrapper {
+    height: 800px !important;
+  }
+
 }
 
 
@@ -883,6 +958,8 @@ header {
     left: -160px;
     top: 90px;
   }
+
+
 }
 
 @media (max-width: 1187px) {
@@ -990,7 +1067,42 @@ header {
     bottom: 600px;
 }
 
+.fast-call-wrapper{
+  flex-direction: column-reverse !important;
+  justify-content: center !important;
+  height: auto !important;
+  width: auto !important;
+}
 
+.fast-call-content{
+  width: 100% !important;
+}
+
+.fast-call-p{
+  margin-top: 40px !important;
+}
+
+.fast-call-image{
+  margin-right: 0 !important;
+  width: 100%;
+}
+
+.fast-call-image img {
+  width: 60% !important;
+  border-radius: 30px;
+}
+
+.fast-call-title {
+    width: 370px !important;
+}
+
+.fast-call-title div h2{
+  font-size: 38px !important;
+}
+
+.fast-call-btn{
+  margin-top: 40px !important;
+}
 }
 
 @media (max-width: 950px) {
@@ -1104,7 +1216,9 @@ header {
     transform: translateX(50%);
   }
 
-  
+  .client-contnt-wrapper h2{
+    font-size: 38px !important;
+  }
 
 }
 
@@ -1139,12 +1253,22 @@ header {
   .company-services2:last-child {
     flex-direction: column !important;
   }
+
+  .quiz h2{
+    font-size: 36px !important;
+  }
+
+
   .objects-processor h2{
     font-size: 36px !important;
     text-align: center;
   }
 
-.position-sertifications div{
+  .fast-call{
+    margin-top: 120px !important;
+  }
+
+  .position-sertifications div{
     width: 500px !important;
   }
 
@@ -1281,6 +1405,7 @@ header {
 
   .objects-processor h2{
     font-size: 32px !important;
+  
   }
 
   .position-sertifications div{
@@ -1299,6 +1424,29 @@ header {
       left: 50px;
       top: -30px;
   }
+
+  .client-contnt-wrapper h2{
+    font-size: 28px !important;
+  }
+
+.fast-call-image img {
+  width: 100% !important;
+  border-radius: 30px;
+}
+
+.fast-call-title div h2{
+  font-size: 32px !important;
+
+}
+
+.fast-call-title{
+  width: 250px !important;
+}
+
+.fast-call-btn{
+  font-size: 18px !important;
+}
+
 
 }
 
