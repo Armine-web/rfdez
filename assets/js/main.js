@@ -52,33 +52,236 @@ document.querySelectorAll('.service-link').forEach(link => {
 const track = document.querySelector('.quiz-town-connetn');
 const prev = document.querySelector('.arrow-left');
 const next = document.querySelector('.quiz-arrow-right');
-
 const totalItems = track.children.length;
-const visibleItems = 8; 
-const itemsPerRow = 4;
-let currentIndex = 0;
+
+let rows = 2;
+let columnsPerPage = 4;
+let currentPage = 0;
+
+function getSettings() {
+  if (window.innerWidth <= 768) {
+    columnsPerPage = 2;
+  } else {
+    columnsPerPage = 4;
+  }
+}
 
 function updateSlider() {
+  getSettings();
 
-  const rowsToMove = Math.floor(currentIndex / itemsPerRow);
-  const itemHeight = track.children[0].offsetHeight + 10; 
-  const rowOffset = rowsToMove * itemHeight;
-  track.style.transform = `translateY(-${rowOffset}px)`;
+  const firstItem = track.querySelector('div');
+  if (!firstItem) return;
+
+  const style = getComputedStyle(track);
+  const gap = parseFloat(style.getPropertyValue('gap')) || 10;
+  const colWidth = firstItem.offsetWidth;
+  const movePerColumn = colWidth + gap;
+
+  const totalColumns = Math.ceil(totalItems / rows);
+  const totalPages = Math.ceil(totalColumns / columnsPerPage);
+
+  if (currentPage >= totalPages) currentPage = totalPages - 1;
+
+  const offset = currentPage * columnsPerPage * movePerColumn;
+  track.style.transform = `translateX(-${offset}px)`;
+
+
+  if (currentPage === 0) {
+    prev.style.visibility = 'hidden';
+  } else {
+    prev.style.visibility = 'visible';
+  }
+
+  if (currentPage >= totalPages - 1) {
+    next.style.visibility = 'hidden';
+  } else {
+    next.style.visibility = 'visible';
+  }
 }
 
 prev.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex -= itemsPerRow; 
-    if (currentIndex < 0) currentIndex = 0;
+  if (currentPage > 0) {
+    currentPage--;
     updateSlider();
   }
 });
 
 next.addEventListener('click', () => {
-  if (currentIndex < totalItems - visibleItems) {
-    currentIndex += itemsPerRow; 
+  const totalColumns = Math.ceil(totalItems / rows);
+  const totalPages = Math.ceil(totalColumns / columnsPerPage);
+  if (currentPage < totalPages - 1) {
+    currentPage++;
     updateSlider();
   }
 });
+
+window.addEventListener('load', updateSlider);
+window.addEventListener('resize', updateSlider);
+
+
+// quiz
+document.addEventListener("DOMContentLoaded", function () {
+  function extractStepNumberFromClasses(element) {
+    for (const className of Array.from(element.classList)) {
+      const match = className.match(/^quiz(\d+)$/);
+      if (match) return parseInt(match[1], 10);
+    }
+    return null;
+  }
+
+  const allCandidates = Array.from(document.querySelectorAll("[class^='quiz']"));
+  let quizBlocks = allCandidates
+    .map(el => ({ el, step: extractStepNumberFromClasses(el) }))
+    .filter(item => item.step !== null)
+    .sort((a, b) => a.step - b.step)
+    .map(item => item.el);
+
+  if (quizBlocks.length === 0) {
+    quizBlocks = allCandidates;
+  }
+
+  let currentQuiz = 0;
+  const answers = {};
+
+  const form = document.getElementById("estimateForm");
+  if (form) form.style.display = "none";
+
+  function stepContainsForm(stepEl) {
+    if (!stepEl) return false;
+    return !!stepEl.querySelector && !!stepEl.querySelector("#estimateForm");
+  }
+
+  quizBlocks.forEach((block, i) => {
+    block.style.display = i === 0 ? "block" : "none";
+  });
+
+  document.querySelectorAll(".quiz-option").forEach(option => {
+    option.addEventListener("click", () => {
+
+      function findQuizContainer(node) {
+        let current = node.closest("[class^='quiz']");
+        while (current && current !== document.body) {
+          const hasNumberedClass = Array.from(current.classList).some(c => /^quiz\d+$/.test(c));
+          if (hasNumberedClass) return current;
+          current = current.parentElement;
+        }
+        return node.closest("[class^='quiz']");
+      }
+
+      const quizBlock = findQuizContainer(option);
+
+      const quizIndex = quizBlocks.indexOf(quizBlock);
+      const question = quizBlock.querySelector("h3")?.textContent.trim();
+      const answer = option.nextElementSibling?.textContent.trim();
+
+      if (question && answer) answers[question] = answer;
+
+      if (quizIndex >= 0) {
+        quizBlocks[quizIndex].style.display = "none";
+      }
+
+      if (quizIndex >= 0 && quizBlocks[quizIndex + 1]) {
+        const nextStep = quizBlocks[quizIndex + 1];
+        nextStep.style.display = "block";
+        if (form && stepContainsForm(nextStep)) form.style.display = "block";
+        currentQuiz = quizIndex + 1;
+      } else {
+        if (form) form.style.display = "block";
+      }
+    });
+  });
+
+  document.querySelectorAll(".quiz-town-connetn > div").forEach(townItem => {
+    townItem.addEventListener("click", () => {
+      function findQuizContainer(node) {
+        let current = node.closest("[class^='quiz']");
+        while (current && current !== document.body) {
+          const hasNumberedClass = Array.from(current.classList).some(c => /^quiz\d+$/.test(c));
+          if (hasNumberedClass) return current;
+          current = current.parentElement;
+        }
+        return node.closest("[class^='quiz']");
+      }
+
+      const quizBlock = findQuizContainer(townItem);
+      const quizIndex = quizBlocks.indexOf(quizBlock);
+      const question = quizBlock.querySelector("h3")?.textContent.trim();
+      const answer = townItem.textContent.trim();
+
+      if (question && answer) answers[question] = answer;
+
+      if (quizIndex >= 0) {
+        quizBlocks[quizIndex].style.display = "none";
+      }
+
+      if (quizIndex >= 0 && quizBlocks[quizIndex + 1]) {
+        const nextStep = quizBlocks[quizIndex + 1];
+        nextStep.style.display = "block";
+        if (form && stepContainsForm(nextStep)) form.style.display = "block";
+        currentQuiz = quizIndex + 1;
+      } else {
+        if (form) form.style.display = "block";
+      }
+    });
+  });
+
+  document.querySelectorAll(".quiz-prev").forEach(button => {
+    button.addEventListener("click", () => {
+      if (currentQuiz > 0) {
+        quizBlocks[currentQuiz].style.display = "none";
+        quizBlocks[currentQuiz - 1].style.display = "block";
+        currentQuiz--;
+      }
+    });
+  });
+
+
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const message = form.querySelector("textarea")?.value.trim() || "";
+      answers["Дополнительная информация"] = message || "—";
+
+      const phoneNumber = "37477474851";
+      let text = "Здравствуйте! Хочу получить расчет стоимости.%0A";
+      for (const [question, answer] of Object.entries(answers)) {
+        text += `*${question}:* ${answer}%0A`;
+      }
+
+      const url = `https://wa.me/${phoneNumber}?text=${text}`;
+      window.open(url, "_blank");
+
+      form.style.display = "none";
+      const overlay = document.getElementById("popupOverlay");
+      if (overlay) overlay.style.display = "flex";
+    });
+  }
+
+
+  const closePopupBtn = document.getElementById("closePopup");
+  if (closePopupBtn) {
+    closePopupBtn.addEventListener("click", () => {
+      const overlay = document.getElementById("popupOverlay");
+      if (overlay) overlay.style.display = "none";
+      if (form) form.style.display = "block";
+    });
+  }
+
+
+  const backToQuizBtn = document.getElementById("backToQuiz");
+  if (backToQuizBtn) {
+    backToQuizBtn.addEventListener("click", () => {
+      const overlay = document.getElementById("popupOverlay");
+      if (overlay) overlay.style.display = "none";
+      currentQuiz = 0;
+      quizBlocks.forEach((block, i) => {
+        block.style.display = i === 0 ? "block" : "none";
+      });
+      if (form) form.style.display = "none";
+    });
+  }
+});
+
 
 
