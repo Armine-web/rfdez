@@ -17,14 +17,16 @@ window.addEventListener('online', updateStatus);
 window.addEventListener('offline', updateStatus);
 
 ///burger menu
-
+const container = document.querySelector('.container'); 
 const burger = document.getElementById('burger');
 const burgerIcon = document.getElementById('burgerIcon');
 
 const staticMenu = document.getElementById('menuWindow');
 const popupMenu = staticMenu.cloneNode(true);
 popupMenu.classList.add('popup');
-document.body.appendChild(popupMenu);
+popupMenu.removeAttribute('id'); 
+
+container.appendChild(popupMenu);
 
 burger.addEventListener('click', () => {
   burger.classList.toggle('active');
@@ -335,3 +337,20 @@ window.addEventListener('click', (e) => {
 });
 
 
+//scroll effects
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".dezinfekciya-item");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, {
+      threshold: 0.2 
+    });
+
+    items.forEach(item => observer.observe(item));
+  });

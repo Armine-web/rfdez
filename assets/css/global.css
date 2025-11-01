@@ -12,7 +12,7 @@ html{
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
-  padding: 40px 170px;
+  padding: 40px 170px 0 170px;
 }
 
 *,
@@ -263,14 +263,15 @@ header {
 .menu-window.popup {
   position: absolute;
   top: 110px;
+  left: 0;
+  right: 0;
+  height: 750px !important;
   padding: 60px 0;
-  left: 0px;
-  right: 0px;
-  height: auto;
   background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: auto;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.4s ease, opacity 0.4s ease;
@@ -430,6 +431,19 @@ header {
 
 .contnt-wrapper {
   width: 200PX !important;
+}
+
+/* scroll effects */
+.dezinfekciya-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s ease;
+}
+
+
+.dezinfekciya-item.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* quiz */
@@ -786,7 +800,7 @@ header {
 
 @media (max-width: 1763px) {
   .container {
-    padding: 40px 100px;
+    padding: 40px 100px 0 100px;
   }
 
   .flug {
@@ -814,7 +828,8 @@ header {
   }
 
   .why-choose-us-wrapper,
-  .sertifikation-wrapper {
+  .sertifikation-wrapper,
+  .footer-relative {
     margin-right: -100px !important;
     margin-left: -100px !important;
   }
@@ -838,11 +853,15 @@ header {
     width: 440px !important;
   }
 
+  .privacy-policy{
+    padding: 70px, 100px 70px 100px !important;
+  }
+
 }
 
 @media (max-width: 1556px) {
   .container {
-    padding: 30px 50px;
+    padding: 30px 50px 0 50px;
   }
 
   .main-img {
@@ -854,7 +873,8 @@ header {
   }
 
   .why-choose-us-wrapper,
-  .sertifikation-wrapper {
+  .sertifikation-wrapper,
+  .footer-relative {
     margin-right: -50px !important;
     margin-left: -50px !important;
   }
@@ -900,6 +920,10 @@ header {
 
   .contact {
     margin-top: 200px !important;
+  }
+
+  .privacy-policy{
+    padding: 70px 50px 70px 50px !important;
   }
 
 }
@@ -1066,6 +1090,28 @@ header {
 
   .contacts {
     margin-top: 150px !important;
+  }
+
+  .footer-item1 .disinfection-services,
+  .license-info-footer, 
+  .privacy-spun{
+    display: none !important;
+
+  } 
+
+  .right-footer{
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+
+  }
+
+  .footer-wrapper{
+    align-items: flex-start !important;
+  }
+
+  .left-footer{
+    margin-right: 40px;
   }
 
 
@@ -1551,6 +1597,10 @@ header {
   .caontact-btn-wrapper button {
     width: 100% !important;
   }
+
+  .menu-window.popup {
+    height: 1200px !important;
+  }
 }
 
 @media (max-width: 678px) {
@@ -1730,7 +1780,17 @@ header {
     width: 360px !important;
     padding: 30px 15px !important;
   }
+.footer-wrapper{
+  flex-direction: column-reverse !important;
+}
 
+.right-footer {
+  gap: 20px !important;
+}
+
+.left-footer .footer-item1 .logo{
+  margin: 30px 0 !important;
+}
 
 }
 
