@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const message = form.querySelector("textarea")?.value.trim() || "";
       answers["Дополнительная информация"] = message || "—";
 
-      const phoneNumber = "37477474851";
+      const phoneNumber = "79237167543";
       let text = "Здравствуйте! Хочу получить расчет стоимости.%0A";
       for (const [question, answer] of Object.entries(answers)) {
         text += `*${question}:* ${answer}%0A`;
@@ -306,7 +306,7 @@ form.addEventListener('submit', async function (e) {
 
 
   try {
-    const resp = await fetch('https://formsubmit.co/ajax/armine.aghajanyan123@gmail.com', {
+    const resp = await fetch('https://formsubmit.co/ajax/rfdezru@yandex.ru', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
