@@ -354,3 +354,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     items.forEach(item => observer.observe(item));
   });
+
+  // towns popap
+
+ 
+  const modal = document.getElementById("townModal");
+  const closeBtn = document.getElementById("townModalClose");
+
+  // Բացում ենք մոդալը կլիկով dezinfekciya-item-ի վրա
+  document.querySelectorAll('.dezinfekciya-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+          e.preventDefault();
+          modal.style.display = "flex";
+      });
+  });
+
+  closeBtn.addEventListener('click', function() {
+      modal.style.display = "none";
+  });
+
+  // Փակում ենք դրսի վրա կլիկ անելուց
+  window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+          modal.style.display = "none";
+      }
+  });
+
