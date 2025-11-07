@@ -1011,7 +1011,6 @@ p {
     flex-direction: unset !important;
   }
 
-  /* Առաջին տող - լոգո միայն (2 սյունակում) */
   header .logo-wrapper[style] {
     grid-row: 1 !important;
     grid-column: 1 / 3 !important;
@@ -1020,7 +1019,6 @@ p {
     margin-right: 0 !important;
   }
 
-  /* Երկրորդ տող - 2 էլեմենտ */
   header .disinfection-services[style] {
     grid-row: 2 !important;
     grid-column: 1 / 2 !important;
@@ -1036,7 +1034,7 @@ p {
     display: flex !important;
   }
 
-  /* Երրորդ տող - 2 էլեմենտ */
+
   header .call-specialist-wrapper[style] {
     grid-row: 3 !important;
     grid-column: 1 / 2 !important;
@@ -1147,7 +1145,7 @@ p {
 
   .fast-call-image, 
   .methodes, 
-  .bg-removing1, {
+  .bg-removing1 {
     margin-right: -100px !important;
   }
 
@@ -1244,7 +1242,7 @@ p {
     width: calc(100% + 50px + 50px) !important;
   }
 
-      .compony-wrapper{
+    .compony-wrapper{
     margin-left: -50px !important;
     margin-right: -50px !important;
     padding: 71px 30px 67px 50px !important;
@@ -1294,7 +1292,7 @@ p {
 
   .fast-call-image,
   .methodes, 
-  .bg-removing1, {
+  .bg-removing1 {
     margin-right: -50px !important;
   }
 
@@ -1626,6 +1624,17 @@ p {
 .main-content {
   gap: 60px !important;
 }
+
+.methodes-wraper{
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+  .metodes1, 
+  .mehodes2{
+    width: 95% !important;
+    height: auto !important;
+  }
 
 }
 
@@ -2208,6 +2217,10 @@ width: 100% !important;
     align-items: center;
   }
 
+  .fast-call-image{
+    width: 350px !important;
+  }
+
 }
 
 
@@ -2562,7 +2575,7 @@ width: 100% !important;
 }
 
 @media (max-width: 1390px){
-  .methodes-wraper, 
+  .methodes-wraper p, 
   .methodes-wraper2 p{
     font-size: 18px !important;
   }
@@ -2571,17 +2584,6 @@ width: 100% !important;
     gap: 40px !important;
   }
 
-   .methodes1, 
-   .mthode-img{
-    width: 500px !important;
-    height: auto !important;
-   }
-
-   .methodes2, 
-   .methods2-content{
-    width: 530px !important;
-    height: auto !important;
-   }
 
    .methods2-content{
     gap: 40px !important;
@@ -2607,7 +2609,7 @@ width: 100% !important;
    }
 
    .removing-inner-left{
-    width: 100% !important;
+    width: 95% !important;
     height: auto !important;
    }
 
@@ -2682,10 +2684,6 @@ width: 100% !important;
     margin-top: 150px !important;
   }
 
-  .metodes1{
-    width: 100% !important;
-    height: 200px !important;
-  }
 
   .methods2-content{
     width: 100% !important;
@@ -2844,13 +2842,8 @@ width: 100% !important;
     margin-top: 100px !important;
   }
 
-  .icon-service-type{
 
-  }
-}
-
-@media (max-width: 900px){
-  .service-header-img, 
+    .service-header-img, 
   .service-header-img-image{
     width: 530px !important;
   }
@@ -2864,28 +2857,21 @@ width: 100% !important;
      top: auto !important;
     left: 220px !important;
   }
-
 }
+
+
 
 @media (max-width: 860px){
 
   .servises-type-content h2{
     width: 100% !important;
   }
-  .methodes1{
-    height: 320px !important;
-  }
+
 
   .methodes h2{
     width: 100% !important;
     font-size: 40px !important;
   }
-
-  .metodes1{
-    height: 300px !important;
-    width: 100% !important;
-  }
-
  
 
   .removing-inner-right{
@@ -3094,6 +3080,26 @@ width: 100% !important;
 .in-company-item{
   width: 100% !important;
 }
+
+  .service-header-img, 
+  .service-header-img-image{
+    width: 350px !important;
+  }
+
+  .hex-icon-wrapper{
+    bottom: auto !important;
+    left: 135px !important;
+    width: 100px !important;
+    height: 110px !important;
+  }
+  .icon-service-type{
+    top: 295px !important;
+    left: 165px !important;
+    width: 45px !important;
+  }
+  .methodes h2 {
+    font-size: 36px !important;
+  }
 }
 
 @media (max-width: 740px){
@@ -3191,9 +3197,6 @@ width: 100% !important;
     margin-top: 550px !important;
   }
 
- .methodes2 {
-  width: 100% !important;
- }
 
  .methodes{
   background-image: none !important;
@@ -3243,8 +3246,17 @@ width: 100% !important;
 }
 
 .icon-service-type{
-  top: 505px !important;
-  left: 210px !important;
+  top: auto !important;
+  left: 162px !important;
+}
+
+.fog-images-item-inner{
+  width: 70% !important;
+  height: auto !important;
+}
+
+.example-of-practis-content{
+  height: auto !important;
 }
   
 }
@@ -3260,10 +3272,6 @@ width: 100% !important;
     .methodes-wraper2{
     margin-top: 180px !important;
   }
-  .methodes2, 
-  .methodes1, {
-  width: 100% !important;
- }
 
  .met-btn{
   font-size: 20px !important;
