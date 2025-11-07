@@ -224,18 +224,19 @@ p {
   color: #ffffff;
 }
 
+
 /* burger popup */
 .menu-window.popup {
   position: absolute;
   top: 100px;
   left: 0;
   right: 0;
-  height: 750px !important;
-  padding: 0 170px;
+  height: 650px !important;
+  padding: 100px 170px;
   background: #ffffff;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   height: auto;
   transform: scaleY(0);
   transform-origin: top;
@@ -245,12 +246,33 @@ p {
   z-index: 1000;
 }
 
-.menu-window.popup.active {
+.menu-popap {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  padding: 100px 170px;
+  background: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: auto;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  border-bottom: 5px solid #23813b;
+  z-index: 1000;
+}
+
+.menu-window.popup.active, 
+.menu-popap.active {
   transform: scaleY(1);
   opacity: 1;
 }
 
-.burger-icon {
+.burger-icon,
+#burgerIcon {
   width: 100%;
   transition: transform 0.3s ease;
 }
@@ -293,19 +315,10 @@ p {
 }
 
 .dezinfekciya-more-services.active .service-link {
-  /* border-image: linear-gradient(69deg, #23813b, #abe3b2) 1;
-  background: linear-gradient(69deg, #23813b, #77e695);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  display: inline-block; */
   display: none !important;
 }
 
-/* .dezinfekciya-more-services.active .service-link img {
-  filter: invert(48%) sepia(92%) saturate(745%) hue-rotate(81deg) brightness(95%) contrast(90%);
-} */
+
 
 .service-link:hover {
   background: linear-gradient(69deg, #23813b, #77e695);
@@ -523,7 +536,7 @@ p {
   z-index: 1000;
 }
 
-/* Contact popup centered overlay */
+/* Contact popup  */
 .popup {
   position: fixed;
   inset: 0;
@@ -697,11 +710,6 @@ p {
 }
 
 
-
-
-
-
-
 .town-modal .quiz-town-connetn {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
@@ -872,6 +880,30 @@ p {
   text-decoration: underline;
 }
 
+
+
+
+
+/* //////////////////////////////////////////////// */
+/* services */
+
+
+.servises-type-img-wrapper img{
+  width: 843px;
+  height: 711px;
+  top: -16px;
+  right: -100px;
+
+}
+
+
+
+.profilaktika-left:hover {
+  background-color: #23813b !important; 
+  border-color: #23813b !important;
+}
+
+
 @media (max-width: 1908px) {
   header {
     display: grid !important;
@@ -932,135 +964,67 @@ p {
     flex-direction: column;
 
   }
+
+    .menu-window.popup, 
+    .menu-popup{
+    top: 165px !important;
+  }
 }
 
-@media (max-width: 1763px){
-  .position-sertifications{
-    right: -100px !important;
-    top:0 !important;
-  }
-     .sertificat2 {
-        left: 320px !important;
+@media (max-width: 1906px) {
+ /* .servises-type-img-wrapper{
+  transform: scale(0.9);
+  transform-origin: center;
+  } */
+
+
+    .servises-type-content h2{
+      font-size: 55px !important;
     }
 
+    .servises-type-content h3{
+      font-size: 40px !important;
+    }
+
+    .cost-btn{
+    }
+
+    .cost-btn{
+      font-size: 20px !important;
+    }
+}
+
+@media (max-width: 1895px){
+ .cost-btn-wrapper{
+  padding: 60px 0 0 !important;
+ }
+
+ .main-baaner{
+  margin-top: 90px !important;
+ }
 
 }
 
-
-
-@media (max-width: 1703px){
-  .main-image{
-    left: 700px !important;
+@media (max-width: 1800px){
+  .removin-inner{
+    gap: 55px !important;
   }
 
- 
-}
-
-
-@media (max-width: 1400px){
-  .main-content{
-    gap: 150px !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-  .main-image{
-    position: static !important;
-    width: 500px !important;
-
-  }
-
-    .fast-call-title {
-    width: 100% !important;
-  }
-
-
-
-  .fast-call-image{
-    margin-right: 0 !important;
-    width: 500px !important;
-  }
-
-  .fast-call-wrapper{
-    flex-direction: column-reverse !important;
-    height: auto !important;
-    align-items: center !important;
-  }
-
-  .fast-call-title div {
-    width: 100% !important;
-  }
-.fast-call-content{
-  width: 100% !important;
-}
-
-}
-
-
-
-
-@media (max-width: 800px) {
-  header[style] {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-rows: auto auto auto auto !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-    gap: 15px 20px !important;
-    flex-direction: unset !important;
-  }
-
-  header .logo-wrapper[style] {
-    grid-row: 1 !important;
-    grid-column: 1 / 3 !important;
-    justify-self: flex-start !important;
-    display: flex !important;
-    margin-right: 0 !important;
-  }
-
-  header .disinfection-services[style] {
-    grid-row: 2 !important;
-    grid-column: 1 / 2 !important;
-    width: auto !important;
-    margin-right: 0 !important;
-  }
-
-  header .license-info[style] {
-    grid-row: 2 !important;
-    grid-column: 2 / 3 !important;
-    width: auto !important;
-    margin-right: 0 !important;
-    display: flex !important;
-  }
-
-
-  header .call-specialist-wrapper[style] {
-    grid-row: 3 !important;
-    grid-column: 1 / 2 !important;
-    margin-right: 0 !important;
-  }
-
-  header .working-now-wrapper[style] {
-    grid-row: 3 !important;
-    grid-column: 2 / 3 !important;
-    width: auto !important;
-    margin-right: 0 !important;
-  }
-
-
-  header .burger-wrapper {
-    grid-row: 4 !important;
-    grid-column: 1 / 3 !important;
-    display: flex !important;
-    justify-content: flex-end !important;
+  .removing-text{
+    margin-top: 60px !important;
   }
 }
 
 @media (max-width: 1763px) {
-  .container,
-  .safe-for-children-wrapper {
+  .container   {
     padding: 40px 100px 0 100px !important ;
+  }
+  .safe-for-children-wrapper{
+     padding: 0 100px 0 100px !important ;
+  }
+  .menu-window.popup, 
+  .menu-popap{
+    padding: 50px !important;
   }
 
   .fast-call {
@@ -1144,9 +1108,15 @@ p {
   }
 
   .fast-call-image, 
-  .methodes, 
   .bg-removing1 {
     margin-right: -100px !important;
+    margin-left: -100px !important;
+    width: calc(100% + 100px + 100px) !important;
+  }
+
+  .methodes{
+    margin-right: -170px !important;
+    width: calc(100% + 100px) !important;
   }
 
   .fast-call-title {
@@ -1182,14 +1152,35 @@ p {
   .services-types-wrapper{
     flex-direction: column !important;
     justify-content: center !important;
-    align-items: center;
+    align-items: center !important;
   }
 
   .fast-call-wrapper div h2{
     font-size: 36px;
   }
+
+    .organisation-content-item2{
+    width: 730px !important;
+  }
+  .organisation-content-item2 h2{
+    font-size: 40px !important;
+  }
+
+    .position-sertifications{
+    right: -100px !important;
+    top:0 !important;
+  }
+     .sertificat2 {
+        left: 320px !important;
+    }
 }
 
+
+@media (max-width: 1703px){
+  .main-image{
+    left: 700px !important;
+  } 
+}
 @media (max-width: 1685px){
   .why-choose-us-image{
     width: 600px !important;
@@ -1204,16 +1195,144 @@ p {
   }
 }
 
+@media (max-width: 1675px) {
+  .services-type {
+    flex-direction: column !important;
+    gap: 100px !important;            
+    align-items: center; 
+    justify-content: center;
+    padding: 60px !important; 
+       
+  }
+
+  .servises-type-img-wrapper img{
+    right: auto !important;
+     top: auto !important;
+  }
+
+
+ .cost-btn{
+  font-size: 18px !important;
+ } 
+
+
+  .methodes-wraper2{
+    gap: 25px !important;
+  }
+
+  .removing-inner-left p{
+    font-size: 18px !important;
+  }
+
+  .removing-text {
+    gap: 20px !important;
+  }
+
+  .removing-inner-right{
+    width: 750px !important;
+  }
+
+  .removing-inner-left h2{
+    font-size: 36px !important;
+  }
+  .removin-inner{
+    gap: 20px !important;
+  }
+
+
+}
+
 @media (max-width: 1600px){
   .description-content{
     gap: 100px !important;
   }
+
+  .company-services1 a,
+  .company-services2 a{
+    font-size: 20px !important;
+  }
+
+   .company-services{
+    padding: 0 !important;
+   }
+
+  section, 
+  main{
+    margin-top: 150px !important;
+  }
+}
+
+@media (max-width: 1557px){
+  .methodes-wraper, 
+  .methodes-wraper2{
+    gap: 90px !important;
+  }
+
+.example-content{
+   margin-top: 120px !important;
+}
+  
+  .example-circle{
+    left: auto !important;
+    right:-70px !important;
+    top: 30px !important;
+  }
+
+  .example-text-content{
+    width: 450px !important;
+    gap: 25px !important;
+  }
+
+  .example-image{
+    width: 450px !important;
+    height: 450px !important;
+  }
+
+  .example-circle{
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .example-circle1{
+    width: 120px !important;
+    height: 120px !important;
+    right: -30px !important;
+  }
+
+  .profilaktika-wrapper{
+    gap: 50px !important;
+  }
+
+  .full-loop h2{
+    font-size: 38px !important;
+  }
+
+  .full-loop p{
+    font-size: 18px !important;
+  }
+
+  .profilaktika-wrapper{
+    gap: 50px !important;
+  }
+
+  .removing-inner-left{
+    width: 510px !important;
+  }
+
+  .removing-text{
+    gap: 15px !important;
+  }
+
 }
 
 @media (max-width: 1556px) {
   .container,
   .safe-for-children-wrapper{
     padding: 30px 50px 0 50px !important;
+  }
+
+  .menu-window.popup {
+    padding: 50px !important;
   }
 
    .sertifikation-wrapper{
@@ -1291,9 +1410,16 @@ p {
 
 
   .fast-call-image,
-  .methodes, 
   .bg-removing1 {
     margin-right: -50px !important;
+    margin-left: -50px !important;
+    width: calc(100% + 50px + 50px) !important;
+    
+  }
+
+   .methodes{
+    margin-right: -5px !important;
+    width: calc(100% + 50px) !important;
   }
 
 
@@ -1301,9 +1427,7 @@ p {
     gap: 150px !important;
   }
 
-  .contact {
-    margin-top: 200px !important;
-  }
+
 
   .privacy-policy {
     padding: 70px 50px 70px 50px !important;
@@ -1368,9 +1492,10 @@ p {
 }
 
 @media (max-width: 1445px) {
-  .menu-window.popup {
-    top: 30px;
-  }
+
+.menu-popap {
+    top: 165px !important;
+    }
 
 
   .burger-menu.active {
@@ -1378,23 +1503,6 @@ p {
     top: 20px !important;
     right: 20px !important;
     transform: scale(1.1);
-  }
-
-
-  .services-page header {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px 20px;
-  }
-
-  .services-page .container {
-    padding-top: 140px !important;
-
   }
 
   header {
@@ -1462,9 +1570,7 @@ p {
     font-size: 18px !important;
   }
 
-  .objects-processor {
-    margin-top: 150px !important;
-  }
+  
 
   .more-services-left {
     width: 65% !important;
@@ -1510,10 +1616,6 @@ p {
     gap: 20px !important;
   }
 
-  .contact-form {
-    padding: 35px 46px 30px 30px;
-    width: 550px;
-  }
 
   .tel-icons {
     display: flex;
@@ -1530,9 +1632,6 @@ p {
     font-size: 22px !important;
   }
 
-  .contacts {
-    margin-top: 150px !important;
-  }
 
   .footer-item1 .disinfection-services,
   .license-info-footer,
@@ -1563,9 +1662,6 @@ p {
 
   }
 
-  .why-rfdez{
-    margin-top: 180px !important;
-  }
 
   .why-rfdez-item,
   .garants-wrapper-item{
@@ -1574,8 +1670,133 @@ p {
 
 }
 
+@media (max-width: 1400px){
+  .main-content{
+    gap: 150px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .main-image{
+    position: static !important;
+    width: 500px !important;
+
+  }
+
+    .fast-call-title {
+    width: 100% !important;
+  }
+
+  .fast-call-content {
+    width: 95% !important;
+  }
+
+  .fast-call-image{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width: 500px !important;
+    border-radius: 20% !important;
+  }
+
+  .fast-call-wrapper{
+    flex-direction: column-reverse !important;
+    height: auto !important;
+    align-items: flex-start !important;
+
+  }
+
+  .fast-call-title div h2 {
+    font-size: 38px !important;
+    width: 450px !important;
+  }
+
+  .fast-call-title div {
+    width: 100% !important;
+  }
+
+  .fast-call-p{
+    padding-top: 30px !important;
+    padding-bottom: 30px !important; 
+  }
+
+}
+
+
+
+@media (max-width: 1390px){
+  .methodes-wraper p, 
+  .methodes-wraper2 p{
+    font-size: 18px !important;
+  }
+
+  .methodes-wraper {
+    gap: 40px !important;
+  }
+
+
+   .methods2-content{
+    gap: 40px !important;
+   }
+
+   .method2-content-inner{
+    margin-top: 0 !important;
+   }
+
+   .profilaktika-wrapper,
+   .removin-inner{
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+   }
+
+   .full-loop{
+    width: 100% !important;
+   }
+
+   .bg-removing{
+    top: 0 !important;
+   }
+
+   .removing-inner-left{
+    width: 95% !important;
+    height: auto !important;
+   }
+
+   .removin-inner,
+   .example-of-practis-wrapper{
+    gap: 50px !important;
+   }
+
+   .removing-text{
+    gap: 40px !important;
+   }
+
+   .wrapper-prophylactic-measures{
+    flex-direction: column !important;
+    width: 100%;
+   }
+
+
+  .organisation-content-item2{
+    width: 500px !important;
+    gap: 50px !important;
+  }
+
+  .organisation-content-item2 div{
+    width: 480px !important;
+    gap: 30px !important;
+  }
+
+  .incompany-content{
+    gap: 60px !important;
+  }
+} 
 
 @media (max-width: 1300px) {
+
+  .home-title{
+    width: 95% !important;
+  }
 
   .dezinfekciya-wrapper,
   .more-services-bottom {
@@ -1615,10 +1836,8 @@ p {
 }
 
 .main-content h1{
-  margin-top: 20px !important;
   width: 80% !important;
   position: static !important;
-  font-size: 42px !important;
 }
 
 .main-content {
@@ -1638,34 +1857,36 @@ p {
 
 }
 
-
-@media (max-width: 1016px) {
-
-  .dezinfekciya-wrapper,
-  .more-services-bottom,
-  .more-services-left {
-    width: 100% !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-direction: column !important;
+@media (max-width: 1260px){
+  .destruction-content{
+    gap: 100px !important;
   }
 
-  .price-disinsection {
-    margin-top: 40px !important;
+  .destruction-content h2 {
+    font-size: 40px !important;
   }
 
-  .services-types{
-    margin-top: 90px;
+  .destruction-content-left, 
+  .destruction-content-right{
+    width: 500px !important;
   }
+
+  .destruction-content-left p, 
+  .destruction-content-right p{
+    font-size: 18px !important;
+  }
+  .line{
+    width: 55% !important;
+  } 
 
 }
 
-
-
 @media (max-width: 1214px) {
-  .menu-window.popup {
+  .menu-window.popup,
+  .menu-popap {
     height: auto;
     padding: 50px;
+    height: 800px !important;
   }
 
   .company-services {
@@ -1727,11 +1948,27 @@ p {
     gap: 60px !important;
   }
 
-  .contact-form {
-    width: 550px !important;
   }
 
 
+
+@media (max-width: 1200px){
+  h1{
+    font-size:60px !important;
+  }
+
+   h2{
+    font-size:44px !important;
+  }
+
+   h3{
+    font-size:32px !important;
+  }
+
+  section, 
+  main{
+    margin-top: 90px !important;
+  }
 
 }
 
@@ -1805,9 +2042,7 @@ p {
     width: auto !important;
   }
 
-  .fast-call-content {
-    width: 100% !important;
-  }
+
 
   .fast-call-p {
     margin-top: 40px !important;
@@ -1818,15 +2053,7 @@ p {
     width: 100%;
   }
 
-  .fast-call-image img {
-    width: 60% !important;
-    border-radius: 30px;
-  }
-
-  .fast-call-title {
-    width: 370px !important;
-  }
-
+ 
   .fast-call-title div h2 {
     font-size: 38px !important;
   }
@@ -1834,841 +2061,6 @@ p {
   .fast-call-btn {
     margin-top: 40px !important;
   }
-}
-
-@media (max-width: 950px) {
-  .home-title {
-    width: 100% !important;
-  }
-
-  .company-services-wrapper{
-    margin-top: 100px !important;
-  }
-  .main-content{
-    margin-top: 80px !important;
-  }
-
-  .main-img {
-    width: 455px !important;
-    height: auto !important;
-  }
-
-  .company-services-wrapper h2 {
-    font-size: 40px !important;
-  }
-
-  .company-services-wrapper p {
-    font-size: 20px !important;
-  }
-
-  .company-services1 a,
-  .company-services2 a,
-  .company-services2:last-child a {
-    font-size: 16px !important;
-  }
-
-  .dezinfekciya-item {
-    gap: 80px !important;
-  }
-
-  .dezinfekciya-item a {
-    gap: 60px !important;
-  }
-
-  .dezinfekciya-item .contnt-wrapper {
-    width: 300px !important;
-  }
-
-  .dezinfekciya-wrapper {
-    justify-content: center !important;
-  }
-
-  .dezinfekciya-heding h2 {
-    font-size: 40px !important;
-  }
-
-  .dezinfekciya-heding p {
-    font-size: 20px;
-    text-align: center;
-  }
-
-
-
-  .why-choose-us-content-wrapper h2 {
-    font-size: 32px;
-  }
-
-  .quiz-options {
-    width: 100% !important;
-    justify-content: center !important;
-  }
-
-  .objects-processor h2 {
-    text-align: center;
-  }
-
-  .sertifikation-wrapper h2 {
-    text-align: right !important;
-    font-size: 32px !important;
-    width: 50%;
-  }
-
-
-  .company-text{
-    width: 100% !important;
-  }
-
-  .company-text h1{
-    font-size: 48px !important;
-  }
-
-
-  .client-contnt-wrapper h2 {
-    font-size: 38px !important;
-  }
-
-  .contact-container {
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .contact-container-contacts {
-    width: 90% !important;
-  }
-
-  .tel-wrapper {
-    justify-content: flex-start !important;
-  }
-
-  .tel-icons {
-    flex-direction: row !important;
-  }
-
-  .contact-form {
-    width: 680px !important;
-  }
-
-  .company-image{
-    width: 450px !important;
-    height: auto !important;
-  }
-
-  .why-choose-us-content-wrapper{
-     padding-left:20px !important;
-    padding-right: 20px !important;
-  }
-
-  .why-choose-us-content-text{
-    flex-direction: column !important;
-    width: 100% !important;
-   
-  }
-
-  .why-choose-us-content-text p{
-    width: 100% !important;
-  }
-
-  .why-choose-us-image{
-    width: 550px !important;
-  }
-
-}
-
-@media (max-width: 800px) {
-  header {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 20px 30px;
-  }
-
-  header .logo-wrapper {
-    grid-row: 1;
-    grid-column: 1 / 2;
-  }
-
-  header .disinfection-services {
-    grid-row: 1;
-    grid-column: 2 / 3;
-    width: auto !important;
-    margin-right: 0 !important;
-  }
-
-  header .license-info {
-    grid-row: 1;
-    grid-column: 3 / 4;
-    width: auto !important;
-    margin-right: 0 !important;
-  }
-
-  header .call-specialist-wrapper {
-    grid-row: 2;
-    grid-column: 1 / 2;
-    margin-right: 0 !important;
-  }
-
-  header .working-now-wrapper {
-    grid-row: 2;
-    grid-column: 2 / 3;
-    width: auto !important;
-    margin-right: 0 !important;
-  }
-
-  header .burger-wrapper {
-    grid-row: 2;
-    grid-column: 3 / 4;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .company-wrapper-content{
-    margin-top: 180px !important;
-  }
-}
-
-
-
-@media (max-width: 774px) {
-
-  .main-h1{
-    font-size: 38px !important;
-    line-height: 36px !important;
-  }
-  .cost-btn-wrapper {
-    padding: 100px 0 80px 0 !important;
-  }
-
-  .cost-btn {
-    padding: 24px !important;
-    font-size: 20px !important;
-  }
-
-  .more-services-content {
-    gap: 60px !important;
-  }
-
-  .dezinfekciya-more-services {
-    margin-top: 60px;
-  }
-
-  .more-services-left,
-  .more-services-bottom,
-  .dezinfekciya-wrapper,
-  .company-services1,
-  .company-services2,
-  .company-services2:last-child a {
-    width: 100% !important;
-  }
-
-  .company-services2:last-child {
-    flex-direction: column !important;
-  }
-
-  .quiz h2 {
-    font-size: 36px !important;
-  }
-
-  .why-choose-us-image{
-    width: 350px !important;
-  }
-
-  .why-choose-us-content-wrapper h2{
-    width: 100% !important;
-  }
-
-
-  .objects-processor h2 {
-    font-size: 36px !important;
-    text-align: center;
-  }
-
-  .fast-call {
-    margin-top: 120px !important;
-  }
-
-  .position-sertifications div {
-    width: 500px !important;
-    gap: 30px !important;
-  }
-
-  .metka {
-     width: 80px;
-  }
-
-
-  .sertificat1{
-    left:0 !important;
-  }
-
-   .sertificat2{
-    left: 200px !important;
-  }
-
-  .contact-form {
-    width: 500px !important;
-  }
-
-  .caontact-btn-wrapper {
-    flex-direction: column !important;
-
-  }
-
-  .caontact-btn-wrapper button {
-    width: 100% !important;
-  }
-
-  .menu-window.popup {
-    height: 1200px !important;
-  }
-
-  .garants-wrapper-item, 
-.why-rfdez-item{
-width: 100% !important;
-}
-}
-
-
-
-@media (max-width: 678px) {
-   .main-h1 {
-    width: 100% !important;
-    text-align: left;
-  }
-
-  .main-content {
-    .position: static !important;
-  }
-
-  .main-img,
-  .beground {
-    display: none !important;
-  }
-
-  .main-h1 {
-    font-size: 50px !important;
-  }
-
-  .main-p1 {
-    width: 100% !important;
-    font-size: 18px !important;
-  }
-
-  .cost-btn-wrapper {
-    flex-direction: column;
-  }
-
-  .main-baaner {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px !important;
-  }
-
-  .services-hr {
-    display: none !important;
-  }
-
-  .dezinfekciya-more-services {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .service-link{
-    font-size: 20px !important;
-  }
-
-
-
-  .quiz-towns {
-    width: 300px;
-  }
-
-  .quiz-town-connetn>div img {
-    display: none;
-  }
-
-  .price-disinsection,
-  .dezinfekciya-item {
-    width: 290px !important;
-    padding: 15px !important;
-  }
-
-  .price-disinsection-h3,
-  .dezinfekciya-item h3 {
-    font-size: 20px !important;
-  }
-
-  .price-disinsection-h4,
-  .dezinfekciya-item h4 {
-    font-size: 18px !important;
-  }
-
-  .price-disinsection-p,
-  .dezinfekciya-item p {
-    font-size: 16px !important;
-  }
-
-  .header-item2 {
-    align-items: center;
-  }
-
-  .fast-call-image{
-    width: 350px !important;
-  }
-
-}
-
-
-
-
- 
-
-@media (max-width: 550px) {
-     header[style] {
-    display: flex !important;
-    flex-direction: column !;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  .company-image{
-    width: 350px !important;
-  }
-}
-
-@media (max-width: 548px) {
-  .main-p2 {
-    font-size: 12px !important;
-  }
-
-  .main-h1 {
-    font-size: 40px !important;
-    text-align: center;
-  }
-
-  .main-p1 {
-    text-align: center;
-  }
-
-  .cost-btn {
-    padding: 18px !important;
-    font-size: 18px !important;
-  }
-
-  .dezinfekciya-heding h2 {
-    font-size: 32px !important;
-  }
-
-  .service-link {
-    font-size: 12px !important;
-    text-align: center;
-    padding: 10px !important;
-
-  }
-
-  .more-services-footer-plus {
-    display: none !important;
-  }
-
-  .why-chose-as-picture {
-    display: block !important;
-  }
-
-  .objects-processor h2 {
-    font-size: 32px !important;
-
-  }
-
-
-  .client-contnt-wrapper h2 {
-    font-size: 28px !important;
-  }
-
-  .fast-call-image img {
-    width: 100% !important;
-    border-radius: 30px;
-  }
-
-  .fast-call-title div h2 {
-    font-size: 32px !important;
-
-  }
-
-  .fast-call-title {
-    width: 250px !important;
-  }
-
-  .fast-call-btn {
-    font-size: 18px !important;
-  }
-
-  .contact-form {
-    width: 360px !important;
-    padding: 30px 15px !important;
-  }
-
-  .footer-wrapper {
-    flex-direction: column-reverse !important;
-  }
-
-  .right-footer {
-    gap: 20px !important;
-  }
-
-  .left-footer .footer-item1 .logo {
-    margin: 30px 0 !important;
-  }
-
-}
-
-@media (max-width: 661px){
-    .sertificat1 {
-        width: 290px !important;
-        top: -45px !important;
-        left: -50px !important;
-    }
-    .sertificat2 {
-      left: 100px !important;
-      top: 0 !important;
-    }
-}
-
-@media (max-width: 591px){
-  .position-sertifications>div{
-    width: 100% !important;
-  }
-
-  .sertifications h2{
-    font-size: 36px !important;
-  }
-
-  .sertifications{
-    padding-top: 40px !important;
-  }
-}
-
-@media (max-width: 474px) {
-
-   .dezinfekciya-item a {
-    gap: 20px !important;
-  }
-
-  .dezinfekciya-item h3 {
-    font-size: 24px !important;
-  }
-}
-
-
-
-
-/* //////////////////////////////////////////////// */
-/* services */
-.menu-popap {
-  position: absolute;
-  top: 110px;
-  left: 0;
-  right: 0;
-  z-index: 150;
-  display: none;
-  background-color: white;
-  border-bottom: 5px solid #23813b;
-  padding: 20px;
-}
-
-.menu-popap.active {
-  display: block;
-}
-
-.servises-type-img-wrapper img{
-  width: 843px;
-  height: 711px;
-  top: -16px;
-  right: -100px;
-
-}
-
-.profilaktika-left:hover {
-  background-color: #23813b !important; 
-  border-color: #23813b !important;
-}
-
-
-@media (max-width: 1906px) {
- .servises-type-img-wrapper{
-  transform: scale(0.9);
-  transform-origin: center;
-  }
-
-
-    .servises-type-content h2{
-      font-size: 55px !important;
-    }
-
-    .servises-type-content h3{
-      font-size: 40px !important;
-    }
-
-    .cost-btn{
-    }
-
-    .cost-btn{
-      font-size: 20px !important;
-    }
-}
-
-@media (max-width: 1895px){
- .cost-btn-wrapper{
-  padding: 60px 0 0 !important;
- }
-
- .main-baaner{
-  margin-top: 90px !important;
- }
-
-}
-
-@media (max-width: 1800px){
-  .removin-inner{
-    gap: 55px !important;
-  }
-
-  .removing-text{
-    margin-top: 60px !important;
-  }
-}
-
-
-@media (max-width: 1763px) {
-  .organisation-content-item2{
-    width: 730px !important;
-  }
-  .organisation-content-item2 h2{
-    font-size: 40px !important;
-  }
-
-    .fast-call-wrapper{
-    gap: 50px !important;
-  }
-}
-
-@media (max-width: 1675px) {
-
-  .services-main{
-    margin-top: 100px !important;
-  }
-  .services-type {
-    flex-direction: column !important;
-    gap: 100px !important;            
-    align-items: center; 
-    justify-content: center;
-    padding: 60px !important; 
-       
-  }
-
-  .servises-type-img-wrapper img{
-    right: auto !important;
-     top: auto !important;
-  }
-
-
- .cost-btn{
-  font-size: 18px !important;
- } 
-
-
-  .methodes-wraper2{
-    gap: 25px !important;
-  }
-
-  .removing-inner-left p{
-    font-size: 18px !important;
-  }
-
-  .removing-text {
-    gap: 20px !important;
-  }
-
-  .removing-inner-right{
-    width: 750px !important;
-  }
-
-  .removing-inner-left h2{
-    font-size: 36px !important;
-  }
-  .removin-inner{
-    gap: 20px !important;
-  }
-
-
-}
-
-@media (max-width: 1557px){
-  .methodes-wraper, 
-  .methodes-wraper2{
-    gap: 90px !important;
-  }
-
-.example-content{
-   margin-top: 120px !important;
-}
-  
-  .example-circle{
-    left: auto !important;
-    right:-70px !important;
-    top: 30px !important;
-  }
-
-  .example-text-content{
-    width: 450px !important;
-    gap: 25px !important;
-  }
-
-  .example-image{
-    width: 450px !important;
-    height: 450px !important;
-  }
-
-  .example-circle{
-    width: 180px !important;
-    height: 180px !important;
-  }
-
-  .example-circle1{
-    width: 120px !important;
-    height: 120px !important;
-    right: -30px !important;
-  }
-
-  .profilaktika-wrapper{
-    gap: 50px !important;
-  }
-
-  .full-loop h2{
-    font-size: 38px !important;
-  }
-
-  .profilaktika{
-    margin-top: 170px !important;
-  }
-
-  .full-loop p{
-    font-size: 18px !important;
-  }
-
-  .profilaktika-wrapper{
-    gap: 50px !important;
-  }
-
-  .removing-inner-left{
-    width: 510px !important;
-  }
-
-  .removing-text{
-    gap: 15px !important;
-  }
-
-}
-
-@media (max-width: 1390px){
-  .methodes-wraper p, 
-  .methodes-wraper2 p{
-    font-size: 18px !important;
-  }
-
-  .methodes-wraper {
-    gap: 40px !important;
-  }
-
-
-   .methods2-content{
-    gap: 40px !important;
-   }
-
-   .method2-content-inner{
-    margin-top: 0 !important;
-   }
-
-   .profilaktika-wrapper,
-   .removin-inner{
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-   }
-
-   .full-loop{
-    width: 100% !important;
-   }
-
-   .bg-removing{
-    top: 0 !important;
-   }
-
-   .removing-inner-left{
-    width: 95% !important;
-    height: auto !important;
-   }
-
-   .removin-inner,
-   .example-of-practis-wrapper{
-    gap: 50px !important;
-   }
-
-   .removing-text{
-    gap: 40px !important;
-   }
-
-   .wrapper-prophylactic-measures{
-    flex-direction: column !important;
-    width: 100%;
-   }
-
-.bg-removing1{
-    min-height: 2500px !important;
-
-   } 
-
-  .organisation-content-item2{
-    width: 500px !important;
-    gap: 50px !important;
-  }
-
-  .organisation-content-item2 div{
-    width: 480px !important;
-    gap: 30px !important;
-  }
-
-  .incompany-content{
-    gap: 60px !important;
-  }
-} 
-
-@media (max-width: 1260px){
-  .destruction-content{
-    gap: 100px !important;
-  }
-
-  .destruction-content h2 {
-    font-size: 40px !important;
-  }
-
-  .destruction-content-left, 
-  .destruction-content-right{
-    width: 500px !important;
-  }
-
-  .destruction-content-left p, 
-  .destruction-content-right p{
-    font-size: 18px !important;
-  }
-  .line{
-    width: 55% !important;
-  } 
-
 }
 
 @media (max-width: 1140px){
@@ -2679,11 +2071,6 @@ width: 100% !important;
   .methodes-wraper2{
     flex-direction: column;
   }
-
-  .methodes{
-    margin-top: 150px !important;
-  }
-
 
   .methods2-content{
     width: 100% !important;
@@ -2712,9 +2099,6 @@ width: 100% !important;
     font-size: 38px !important;
   }
 
-  .safe-for-children{
-    margin-top: 80px !important;
-  }
 
   .description-content{
     margin-top: 65px !important;
@@ -2816,6 +2200,28 @@ width: 100% !important;
   margin-top: 100px !important;
 }
 
+.contact-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .contact-container-contacts {
+    width: 90% !important;
+  }
+
+  .tel-wrapper {
+    justify-content: flex-start !important;
+  }
+
+  .tel-icons {
+    flex-direction: row !important;
+  }
+
+  .contact-form {
+    width: 680px !important;
+  }
+
 }
 
 @media (max-width: 1060px){
@@ -2855,11 +2261,155 @@ width: 100% !important;
   }
   .icon-service-type{
      top: auto !important;
-    left: 220px !important;
+    left: 225px !important;
   }
 }
 
 
+@media (max-width: 1024px){
+  h1{
+    font-size:50px !important;
+  }
+
+   h2{
+    font-size:40px !important;
+  }
+
+   h3{
+    font-size:28px !important;
+  }
+  section, main{
+    margin-top: 50px !important;
+  }
+}
+
+
+@media (max-width: 1016px) {
+
+  .dezinfekciya-wrapper,
+  .more-services-bottom,
+  .more-services-left {
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+  }
+
+  .price-disinsection {
+    margin-top: 40px !important;
+  }
+
+}
+
+
+
+
+
+@media (max-width: 950px) {
+  .home-title {
+    width: 100% !important;
+  }
+
+  .company-services-wrapper{
+    margin-top: 100px !important;
+  }
+
+  .main-img {
+    width: 455px !important;
+    height: auto !important;
+  }
+
+  .company-services-wrapper h2 {
+    font-size: 40px !important;
+  }
+
+  .company-services-wrapper p {
+    font-size: 20px !important;
+  }
+
+  .company-services1 a,
+  .company-services2 a,
+  .company-services2:last-child a {
+    font-size: 16px !important;
+  }
+
+  .dezinfekciya-item {
+    gap: 80px !important;
+  }
+
+  .dezinfekciya-item a {
+    gap: 60px !important;
+  }
+
+  .dezinfekciya-item .contnt-wrapper {
+    width: 300px !important;
+  }
+
+  .dezinfekciya-wrapper {
+    justify-content: center !important;
+  }
+
+  .dezinfekciya-heding h2 {
+    font-size: 40px !important;
+  }
+
+  .dezinfekciya-heding p {
+    font-size: 20px;
+    text-align: center;
+  }
+
+
+
+  .why-choose-us-content-wrapper h2 {
+    font-size: 32px;
+  }
+
+  .quiz-options {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .objects-processor h2 {
+    text-align: center;
+  }
+
+  .sertifikation-wrapper h2 {
+    text-align: right !important;
+    font-size: 32px !important;
+    width: 50%;
+  }
+
+
+  .company-text{
+    width: 100% !important;
+  }
+
+
+  .company-image{
+    width: 450px !important;
+    height: auto !important;
+  }
+
+  .why-choose-us-content-wrapper{
+     padding-left:20px !important;
+    padding-right: 20px !important;
+  }
+
+  .why-choose-us-content-text{
+    flex-direction: column !important;
+    width: 100% !important;
+   
+  }
+
+  .why-choose-us-content-text p{
+    width: 100% !important;
+  }
+
+  .why-choose-us-image{
+    width: 550px !important;
+  }
+
+}
 
 @media (max-width: 860px){
 
@@ -2881,10 +2431,6 @@ width: 100% !important;
     top: -150px !important;
   }
 
-  .bg-removing1{
-    min-height: 2200px !important;
-
-   }
   
   .organisation-content-item1{
   justify-content: center !important;
@@ -2898,10 +2444,6 @@ width: 100% !important;
 
 .services-types1{
   width: 100% !important;
-}
-
-.services-types1 h1{
-  font-size: 50px !important;
 }
 
 .services-types1 h3{
@@ -2920,6 +2462,75 @@ width: 100% !important;
 
   
 }
+
+@media (max-width: 807px) {
+  .company-wrapper-content{
+    margin-top: 180px !important;
+  } 
+  header[style] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto auto auto !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 15px 20px !important;
+    flex-direction: unset !important;
+  }
+
+  header .logo-wrapper[style] {
+    grid-row: 1 !important;
+    grid-column: 1 / 3 !important;
+    justify-self: flex-start !important;
+    display: flex !important;
+    margin-right: 0 !important;
+  }
+
+  header .disinfection-services[style] {
+    grid-row: 2 !important;
+    grid-column: 1 / 2 !important;
+    width: auto !important;
+    margin-right: 0 !important;
+  }
+
+  header .license-info[style] {
+    grid-row: 2 !important;
+    grid-column: 2 / 3 !important;
+    width: auto !important;
+    margin-right: 0 !important;
+    display: flex !important;
+  }
+
+
+  header .call-specialist-wrapper[style] {
+    grid-row: 3 !important;
+    grid-column: 1 / 2 !important;
+    margin-right: 0 !important;
+  }
+
+  header .working-now-wrapper[style] {
+    grid-row: 3 !important;
+    grid-column: 2 / 3 !important;
+    width: auto !important;
+    margin-right: 0 !important;
+  }
+
+
+  header .burger-wrapper {
+    grid-row: 4 !important;
+    grid-column: 1 / 3 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+  }
+
+  .menu-window.popup{
+    top: 95px !important;
+  }
+  .menu-popap{
+    top: 75px !important;
+  }
+}
+
 @media (max-width: 790px){
   .sevice-type-icon-wrapper {
     position: absolute !important;
@@ -2983,12 +2594,179 @@ width: 100% !important;
 
 }
 
+@media (max-width: 774px) {
+
+  .main-h1{
+    line-height: 36px !important;
+  }
+  .cost-btn-wrapper {
+    padding: 100px 0 80px 0 !important;
+  }
+
+  .cost-btn {
+    padding: 24px !important;
+    font-size: 20px !important;
+  }
+
+  .more-services-content {
+    gap: 60px !important;
+  }
+
+  .dezinfekciya-more-services {
+    margin-top: 60px;
+  }
+
+  .more-services-left,
+  .more-services-bottom,
+  .dezinfekciya-wrapper,
+  .company-services1,
+  .company-services2,
+  .company-services2:last-child a {
+    width: 100% !important;
+  }
+
+  .company-services2:last-child {
+    flex-direction: column !important;
+  }
+
+  .quiz h2 {
+    font-size: 36px !important;
+  }
+
+  .why-choose-us-image{
+    width: 350px !important;
+  }
+
+  .why-choose-us-content-wrapper h2{
+    width: 100% !important;
+  }
+
+
+  .objects-processor h2 {
+    text-align: center;
+  }
+
+  .fast-call {
+    margin-top: 120px !important;
+  }
+
+  .position-sertifications div {
+    width: 500px !important;
+    gap: 30px !important;
+  }
+
+  .metka {
+     width: 80px;
+  }
+
+
+  .sertificat1{
+    left:0 !important;
+  }
+
+   .sertificat2{
+    left: 200px !important;
+  }
+
+  .contact-form {
+    width: 500px !important;
+  }
+
+  .caontact-btn-wrapper {
+    flex-direction: column !important;
+
+  }
+
+  .caontact-btn-wrapper button {
+    width: 100% !important;
+  }
+
+  .menu-window.popup,
+  .menu-popap {
+    height: 1300px !important;
+  }
+
+  .garants-wrapper-item, 
+.why-rfdez-item{
+width: 100% !important;
+}
+}
+
+@media (max-width: 740px){
+   .destruction{
+    margin-top: 750px !important;
+  }
+}
+
+@media (max-width: 731px){
+   .destruction{
+    margin-top: 850px !important;
+  }
+
+  .example-of-practis-image-wrapper{
+    width: 350px !important;
+  }
+
+  .example-squar{
+    right: -65px !important;
+    width: 150px !important;
+    height: 145px !important;
+  }
+
+  .example-of-practis-content{
+    width: 100% !important;
+  }
+
+  .example-squar1 {
+    right: 100px !important;
+  }
+
+  .example-squar2 {
+    right: 20px !important;
+  }
+
+  .example-of-practis-butons{
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .example-of-praktis-p{
+    gap: 20px !important;
+    
+  }
+
+  .example-of-praktis-p p{
+    font-size: 18px !important;
+  }
+
+  .example-of-practis-content{
+    gap: 40px !important;
+  }
+
+  .example-of-practis{
+    margin-top: 90px !important;
+  }
+
+  .fast-call-title {
+    width: 280px !important;
+  }
+
+  .fast-call-title div h2 {
+    font-size: 32px !important;
+  }
+  
+}
+
 @media (max-width: 680px){
    .container,
    .safe-for-children-wrapper {
     padding: 25px 20px 0 20px !important;
   }
 
+  .menu-window.popup, 
+  .menu-popap{
+    padding: 30px 20px !important;
+  }
    .sertifikation-wrapper{
     margin-left: -20px !important;
     margin-right: -20px !important;
@@ -3057,9 +2835,15 @@ width: 100% !important;
 
 
  .fast-call-image, 
-  .methodes, 
   .bg-removing1 {
     margin-right: -20px !important;
+    margin-right: -20px !important;
+    width: calc(100% + 20px + 20px) !important;
+  }
+
+   .methodes{
+    margin-right: -20px !important;
+    width: calc(100% + 20px) !important;
   }
 
 
@@ -3100,70 +2884,8 @@ width: 100% !important;
   .methodes h2 {
     font-size: 36px !important;
   }
-}
 
-@media (max-width: 740px){
-   .destruction{
-    margin-top: 750px !important;
-  }
-}
-
-@media (max-width: 731px){
-   .destruction{
-    margin-top: 850px !important;
-  }
-
-  .example-of-practis-image-wrapper{
-    width: 350px !important;
-  }
-
-  .example-squar{
-    right: -65px !important;
-    width: 150px !important;
-    height: 145px !important;
-  }
-
-  .example-of-practis-content{
-    width: 100% !important;
-  }
-
-  .example-squar1 {
-    right: 100px !important;
-  }
-
-  .example-squar2 {
-    right: 20px !important;
-  }
-
-  .example-of-practis-butons{
-    flex-direction: column !important;
-    gap: 20px !important;
-  }
-
-  .example-of-praktis-p{
-    gap: 20px !important;
-    
-  }
-
-  .example-of-praktis-p p{
-    font-size: 18px !important;
-  }
-
-  .example-of-practis-content{
-    gap: 40px !important;
-  }
-
-  .example-of-practis{
-    margin-top: 90px !important;
-  }
-  
-}
-
-
-
-@media (max-width: 680px){
-
-  .servises-type-content h2{
+   .servises-type-content h2{
     font-size: 38px !important;
   }
 
@@ -3232,10 +2954,6 @@ width: 100% !important;
   .example-hex2 {
     left: -11px !important;
 }
-  .bg-removing1{
-    min-height: 2320px !important;
-
-   }
 
    .example-content{
     margin-top: 100px !important;
@@ -3258,9 +2976,121 @@ width: 100% !important;
 .example-of-practis-content{
   height: auto !important;
 }
-  
 }
 
+@media (max-width: 678px) {
+   .main-h1 {
+    width: 100% !important;
+    text-align: left;
+  }
+
+  .main-content {
+    .position: static !important;
+  }
+
+  .main-img,
+  .beground {
+    display: none !important;
+  }
+
+  .main-p1 {
+    width: 100% !important;
+    font-size: 18px !important;
+  }
+
+  .cost-btn-wrapper {
+    flex-direction: column;
+  }
+
+  .main-baaner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px !important;
+  }
+
+  .services-hr {
+    display: none !important;
+  }
+
+  .dezinfekciya-more-services {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .service-link{
+    font-size: 20px !important;
+  }
+
+
+
+  .quiz-towns {
+    width: 300px;
+  }
+
+  .quiz-town-connetn>div img {
+    display: none;
+  }
+
+  .price-disinsection,
+  .dezinfekciya-item {
+    width: 290px !important;
+    padding: 15px !important;
+  }
+
+  .price-disinsection-h3,
+  .dezinfekciya-item h3 {
+    font-size: 20px !important;
+  }
+
+  .price-disinsection-h4,
+  .dezinfekciya-item h4 {
+    font-size: 18px !important;
+  }
+
+  .price-disinsection-p,
+  .dezinfekciya-item p {
+    font-size: 16px !important;
+  }
+
+  .header-item2 {
+    align-items: center;
+  }
+
+  .fast-call-image{
+    width: 350px !important;
+  }
+
+  h1{
+    font-size: 45px !important;
+  }
+   h2{
+    font-size: 36px !important;
+  }
+   h3{
+    font-size: 26px !important;
+  }
+   p{
+    font-size: 18px !important;
+  }
+
+  section, main{
+    margin-top: 35px !important;
+  }
+
+}
+@media (max-width: 661px){
+    .sertificat1 {
+        width: 290px !important;
+        top: -45px !important;
+        left: -50px !important;
+    }
+    .sertificat2 {
+      left: 100px !important;
+      top: 0 !important;
+    }
+}
 
 @media (max-width: 600px){
    .destruction{
@@ -3304,6 +3134,20 @@ width: 100% !important;
 
 }
 
+@media (max-width: 591px){
+  .position-sertifications>div{
+    width: 100% !important;
+  }
+
+  .sertifications h2{
+    font-size: 36px !important;
+  }
+
+  .sertifications{
+    padding-top: 40px !important;
+  }
+}
+
 @media (max-width: 570px){
   .removing-inner-left {
     padding-top: 120px !important;
@@ -3314,6 +3158,83 @@ width: 100% !important;
   }
 }
 
+
+@media (max-width: 550px) {
+     header[style] {
+    display: flex !important;
+    flex-direction: column !;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .company-image{
+    width: 350px !important;
+  }
+}
+
+@media (max-width: 548px) {
+  .main-p2 {
+    font-size: 12px !important;
+  }
+
+  .main-h1 {
+
+    text-align: center;
+  }
+
+  .main-p1 {
+    text-align: center;
+  }
+
+  .cost-btn {
+    padding: 18px !important;
+    font-size: 18px !important;
+  }
+
+  .dezinfekciya-heding h2 {
+    font-size: 32px !important;
+  }
+
+  .service-link {
+    font-size: 12px !important;
+    text-align: center;
+    padding: 10px !important;
+
+  }
+
+  .more-services-footer-plus {
+    display: none !important;
+  }
+
+  .why-chose-as-picture {
+    display: block !important;
+  }
+
+
+
+  .fast-call-btn {
+    font-size: 18px !important;
+  }
+
+  .contact-form {
+    width: 360px !important;
+    padding: 30px 15px !important;
+  }
+
+  .footer-wrapper {
+    flex-direction: column-reverse !important;
+  }
+
+  .right-footer {
+    gap: 20px !important;
+  }
+
+  .left-footer .footer-item1 .logo {
+    margin: 30px 0 !important;
+  }
+
+}
+ 
 @media (max-width: 509px){
   .methodes-wraper2{
     margin-top: 250px !important;
@@ -3371,11 +3292,44 @@ width: 100% !important;
  
 }
 
-@media (max-width: 419px){
- .bg-removing1{
-    min-height: 2600px !important;
 
-   } 
+@media (max-width: 480px){
+  h1{
+    font-size: 40px !important;
+  }
+
+  h2{
+    font-size: 32px !important;
+  }
+
+  h3{
+    font-size: 24px !important;
+  }
+
+  p{
+    font-size: 16px !important;
+  }
+
+  section, main{
+    margin-top: 30px !important;
+  }
+}
+
+
+
+@media (max-width: 474px) {
+
+   .dezinfekciya-item a {
+    gap: 20px !important;
+  }
+
+}
+
+
+
+
+@media (max-width: 419px){
+
   .example-content{
     padding-top: 100px;
   }
