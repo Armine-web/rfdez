@@ -74,6 +74,10 @@ select {
   outline: none;
 }
 
+h2, h3{
+  line-height: 40px !important;
+}
+
 p {
   font-size: 1rem;
 }
@@ -1056,7 +1060,7 @@ p {
     .compony-wrapper{
     margin-left: -100px !important;
     margin-right: -100px !important;
-    padding: 81px 60px 77px 100px !important;
+    padding: 0 60px 77px 100px !important;
     width: calc(100% + 100px +100px) !important;
   }
 
@@ -1081,10 +1085,7 @@ p {
     right: -100px !important;
   }
 
-  .bg-removing{
-    left: -100 !important;
-  }
-
+ 
     .bg-removing{
     padding-left: 100px !important;
   }
@@ -1173,6 +1174,10 @@ p {
      .sertificat2 {
         left: 320px !important;
     }
+
+    .company-wrapper-content{
+      margin-top: 150px !important;
+    }
 }
 
 
@@ -1252,12 +1257,28 @@ p {
     font-size: 20px !important;
   }
 
-   .company-services{
-    padding: 0 !important;
-   }
+  .services-types-wrapper{
+    padding-top: 0 !important;
+  }
 
-  section, 
-  main{
+    .services-types{
+    margin-top: 0 !important;
+  }
+
+  .destruction{
+    margin-top: 150px !important;
+  }
+  .methodes, 
+  .profilaktika,
+  .organisation,
+  .removing-hot,
+  .organisation,
+  .clientsm
+  .fast-call,
+  .contacts,
+  .why-rfdez,
+  .garants,
+  .objects-processor{
     margin-top: 150px !important;
   }
 }
@@ -1269,7 +1290,7 @@ p {
   }
 
 .example-content{
-   margin-top: 120px !important;
+   margin-top: 150px !important;
 }
   
   .example-circle{
@@ -1323,6 +1344,9 @@ p {
     gap: 15px !important;
   }
 
+
+
+
 }
 
 @media (max-width: 1556px) {
@@ -1364,7 +1388,7 @@ p {
     .compony-wrapper{
     margin-left: -50px !important;
     margin-right: -50px !important;
-    padding: 71px 30px 67px 50px !important;
+    padding: 0 30px 67px 50px !important;
     width: calc(100% + 50px + 50px) !important;
   }
 
@@ -1393,9 +1417,6 @@ p {
     right: -50px !important;
   }
 
-  .bg-removing{
-    left: -50px !important;
-  }
 
   .bg-removing{
     padding-left: 50px !important;
@@ -1418,7 +1439,7 @@ p {
   }
 
    .methodes{
-    margin-right: -5px !important;
+    margin-right: -50px !important;
     width: calc(100% + 50px) !important;
   }
 
@@ -1505,6 +1526,8 @@ p {
     transform: scale(1.1);
   }
 
+
+
   header {
     flex-wrap: wrap;
   }
@@ -1529,6 +1552,7 @@ p {
     flex-direction: column-reverse !important;
     justify-content: center !important;
     align-items: center !important;
+    gap: 60px !important;
    
   }
 
@@ -1965,10 +1989,53 @@ p {
     font-size:32px !important;
   }
 
-  section, 
-  main{
+   .services-types-wrapper {
+    padding-top: 90px !important;
+  }
+
+    .bg-removing1{
+    padding-top: 60px !important;
+  }
+  
+  .methodes {
+    padding-bottom: 90px !important;
+  }
+
+  .methodes,
+  .safe-for-children,
+  .profilaktika,
+  .organisation,
+  .bg-removing1,
+  .removing-hot,
+  .organisation,
+  .fast-call,
+  .contacts,
+  .company-wrapper-content,
+  .why-rfdez,
+  .garants,
+  .main-content,
+  .why-choose-us,
+  .quiz,
+  .objects-processor,
+  .sertifications{
     margin-top: 90px !important;
   }
+
+  .clients-content{
+    gap: 60px;
+  }
+
+  .contact-container-contacts,
+  .garants-wrapper{
+    margin-top: 60px !important;
+  }
+
+  .clients{
+    margin-top: 115px !important;
+
+  }
+
+
 
 }
 
@@ -2080,10 +2147,7 @@ p {
   .mthode-img{
     width: 80% !important;
   }
-  .mthode-img img{
-    width: 100% !important;
-  }
-
+ 
   .description-content{
     flex-direction: column !important;
     gap: 55px !important;
@@ -2107,7 +2171,7 @@ p {
   .example-content{
     flex-direction: column !important;
     gap: 20px !important;
-    margin-top: 40px !important;
+    margin-top: 60px !important;
   }
 
 .example-text-content{
@@ -2278,9 +2342,18 @@ p {
    h3{
     font-size:28px !important;
   }
-  section, main{
-    margin-top: 50px !important;
+
+    .methodes-wraper{
+    margin-top: 60px !important;
   }
+
+
+
+
+
+   /* .services-types-wrapper{
+    padding-top: 50px !important;
+  } */
 }
 
 
@@ -2295,7 +2368,9 @@ p {
     flex-direction: column !important;
   }
 
-  .price-disinsection {
+  .price-disin
+  
+  {
     margin-top: 40px !important;
   }
 
@@ -2464,9 +2539,7 @@ p {
 }
 
 @media (max-width: 807px) {
-  .company-wrapper-content{
-    margin-top: 180px !important;
-  } 
+
   header[style] {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -2529,6 +2602,10 @@ p {
   .menu-popap{
     top: 75px !important;
   }
+
+    .services-types{
+    margin-top: -70px !important;
+  }
 }
 
 @media (max-width: 790px){
@@ -2556,12 +2633,9 @@ p {
   }
 
   .services-main{
-     margin-top: 200px !important;
+     margin-top: 150px !important;
   }
 
-  .destruction{
-    margin-top: 800px !important;
-  }
 
   .destruction-content h2 {
     font-size: 36px !important;
@@ -2692,16 +2766,8 @@ width: 100% !important;
 }
 }
 
-@media (max-width: 740px){
-   .destruction{
-    margin-top: 750px !important;
-  }
-}
 
 @media (max-width: 731px){
-   .destruction{
-    margin-top: 850px !important;
-  }
 
   .example-of-practis-image-wrapper{
     width: 350px !important;
@@ -2796,7 +2862,7 @@ width: 100% !important;
   .compony-wrapper{
     margin-left: -20px !important;
     margin-right: -20px !important;
-    padding: 51px 20px 57px 20px !important;
+    padding: 0 20px 57px 20px !important;
     width: calc(100% + 20px + 20px) !important;
   }
 
@@ -2825,19 +2891,18 @@ width: 100% !important;
     padding: 0 20px 0 20px !important;
   }
 
-  .bg-removing{
-    left: -20px !important;
+    .bg-removing{
+    padding-left: 20px !important;
   }
 
-    .bg-removing{
-    padding-left: 50px !important;
-  }
+
+
 
 
  .fast-call-image, 
   .bg-removing1 {
     margin-right: -20px !important;
-    margin-right: -20px !important;
+    margin-left: -20px !important;
     width: calc(100% + 20px + 20px) !important;
   }
 
@@ -2915,17 +2980,13 @@ width: 100% !important;
    
   }
 
-  .destruction{
-    margin-top: 550px !important;
-  }
-
 
  .methodes{
   background-image: none !important;
  }
 
  .methodes-wraper p{
-  font-size: 16 !important;
+  font-size: 16px !important;
  }
 
  .safe-for-children-wrapper h2{
@@ -2956,7 +3017,7 @@ width: 100% !important;
 }
 
    .example-content{
-    margin-top: 100px !important;
+    margin-top: 30px !important;
    }
 
    .icon-service-type{
@@ -3022,7 +3083,53 @@ width: 100% !important;
   .service-link{
     font-size: 20px !important;
   }
+    .methodes,
+     .safe-for-children,
+    .profilaktika, 
+    .organisation,
+    .bg-removing1,
+    .removing-hot,
+    .organisation,
+    .fast-call,
+    .contacts,
+    .company-wrapper-content,
+    .why-rfdez,
+    .garants,
+    .main-content,
+    .why-choose-us.arrow-black.quiz,
+    .objects-processor{
+    margin-top: 60px !important;
+  }
+    .methodes   {
+    padding-bottom: 60px !important;
+  }
+ 
+  .bg-removing1{
+    padding-top: 0 !important;
+  }
 
+  .clients{
+    margin-top: 75px !important;
+  }
+
+  .methodes-wraper,
+  .contact-container-contacts,
+  .garants-wrapper{
+    margin-top: 40px !important;
+  }
+
+  .clients-content{
+    gap: 40px !important;
+  }
+
+  .methodes-wraper2{
+    gap: 60px !important;
+  }
+
+  .cost-btn-wrapper{
+    padding-top: 60px !important;
+    padding-bottom: 50px !important;
+  }
 
 
   .quiz-towns {
@@ -3075,9 +3182,7 @@ width: 100% !important;
     font-size: 18px !important;
   }
 
-  section, main{
-    margin-top: 35px !important;
-  }
+ 
 
 }
 @media (max-width: 661px){
@@ -3093,14 +3198,9 @@ width: 100% !important;
 }
 
 @media (max-width: 600px){
-   .destruction{
-    margin-top: 420px !important;
-  }
+
    .servises-type-content h2{
     font-size: 30px !important;
-  }
-    .methodes-wraper2{
-    margin-top: 180px !important;
   }
 
  .met-btn{
@@ -3124,12 +3224,6 @@ width: 100% !important;
 .service-header-img-image{
   width: 350px !important;
 }
-
-.hex-icon-wrapper{
-  width: 120px !important;
-  height: 130px !important;
-}
-
 
 
 }
@@ -3236,9 +3330,7 @@ width: 100% !important;
 }
  
 @media (max-width: 509px){
-  .methodes-wraper2{
-    margin-top: 250px !important;
-  }
+
 
   .example-text-content{
     width: 350px !important;
@@ -3310,9 +3402,8 @@ width: 100% !important;
     font-size: 16px !important;
   }
 
-  section, main{
-    margin-top: 30px !important;
-  }
+
+
 }
 
 
