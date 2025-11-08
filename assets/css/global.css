@@ -159,8 +159,12 @@ p {
 }
 
 .dezinfekciya-item{
-  width: 410px !important;
-  padding:29px 26px 23px 32px !important;
+  width: 370px !important;
+  padding:21px 20px 23px 18px !important;
+}
+
+.dezinfekciya-item a{
+  gap: 15px !important;
 }
 
 .contnt-wrapper h3{
@@ -235,7 +239,7 @@ p {
   top: 100px;
   left: 0;
   right: 0;
-  height: 650px !important;
+  height: 600px !important;
   padding: 100px 170px;
   background: #ffffff;
   display: flex;
@@ -325,7 +329,7 @@ p {
 
 
 .service-link:hover {
-  background: linear-gradient(69deg, #23813b, #77e695);
+  background:  #23813b;
   color: #ffffff;
 }
 
@@ -372,13 +376,6 @@ p {
 
 }
 
-.price-disinsection:hover .price-disinsection-h4 {
-  color: #242424 !important;
-}
-
-.price-disinsection:hover .price-disinsection-p {
-  color: #242424 !important;
-}
 
 .price-disinsection:hover .price-disinsection-h3 {
   color: #ffffff !important;
@@ -394,10 +391,6 @@ p {
   filter: brightness(0) invert(1)
 }
 
-.price-disinsection:hover .pocet {
-  filter: brightness(0) invert(0);
-  transition: filter 0.3s ease;
-}
 
 .more-services-footer-links:hover .arrow-black {
   filter: invert(48%) sepia(92%) saturate(745%) hue-rotate(81deg) brightness(95%) contrast(90%);
@@ -1028,7 +1021,11 @@ p {
   }
   .menu-window.popup, 
   .menu-popap{
-    padding: 50px !important;
+    padding: 100px !important;
+  }
+
+  .menu-window.popup{
+    height: 570px !important;
   }
 
   .fast-call {
@@ -1271,12 +1268,12 @@ p {
   .methodes, 
   .profilaktika,
   .organisation,
-  .removing-hot,
   .organisation,
   .clientsm
   .fast-call,
   .contacts,
   .why-rfdez,
+  .removing-hot,
   .garants,
   .objects-processor{
     margin-top: 150px !important;
@@ -1357,6 +1354,10 @@ p {
 
   .menu-window.popup {
     padding: 50px !important;
+  }
+
+  .menu-window.popup{
+    height: 500px !important;
   }
 
    .sertifikation-wrapper{
@@ -1482,6 +1483,18 @@ p {
     right: auto !important;
   }
 
+  .dezinfekciya-wrapper,
+  .more-services-top,
+  .more-services-bottom{
+    gap: 70px !important;
+  }
+
+  .more-services-bottom{
+    margin-top: 70px !important;
+  }
+
+
+
 }
 
 @media (max-width: 1456px) {
@@ -1571,28 +1584,7 @@ p {
     padding: 30px 0 30px 0 !important;
   }
 
-  .dezinfekciya-wrapper,
-  .more-services-bottom,
-  .more-services-left {
-    gap: 60px !important;
-  }
-
-  .price-disinsection {
-    width: 300px !important;
-    padding: 20px !important;
-  }
-
-  .price-disinsection-h3 {
-    font-size: 24px !important;
-  }
-
-  .price-disinsection-h4 {
-    font-size: 20px !important;
-  }
-
-  .price-disinsection-p {
-    font-size: 18px !important;
-  }
+  
 
   
 
@@ -1743,6 +1735,26 @@ p {
     padding-bottom: 30px !important; 
   }
 
+    .price-disinsection {
+    width: 390px !important;
+    height: 288px !important;
+    padding: 25px !important;
+    margin-top: 40px;
+  }
+
+  .price-disinsection p {
+    display: none !important;
+  }
+
+
+  .more-services-top,
+  .more-services-bottom,
+  .dezinfekciya-wrapper{
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: auto !important;
+    gap: 70px !important;
+  }
+
 }
 
 
@@ -1786,6 +1798,14 @@ p {
     height: auto !important;
    }
 
+   .removing-inner-right{
+    height: auto !important;
+   }
+
+   .wrapper-prophylactic-measures-blok{
+    margin-top: 60px !important;
+   }
+
    .removin-inner,
    .example-of-practis-wrapper{
     gap: 50px !important;
@@ -1814,6 +1834,10 @@ p {
   .incompany-content{
     gap: 60px !important;
   }
+
+  .wrapper-prophylactic-measures-blok{
+    position: static !important;
+  }
 } 
 
 @media (max-width: 1300px) {
@@ -1822,11 +1846,7 @@ p {
     width: 95% !important;
   }
 
-  .dezinfekciya-wrapper,
-  .more-services-bottom {
-    width: 100% !important;
-    gap: 60px !important;
-  }
+ 
 
   .more-services-top {
     flex-direction: column !important;
@@ -1838,16 +1858,7 @@ p {
     margin: auto !important;
   }
 
-  .price-disinsection {
-    width: 390px !important;
-    height: 288px !important;
-    padding: 25px !important;
-    margin-top: 40px;
-  }
 
-  .price-disinsection p {
-    display: none !important;
-  }
 
   .more-services-left {
     width: 68% !important;
@@ -1879,6 +1890,11 @@ p {
     height: auto !important;
   }
 
+  .why-rfdez-item,
+  .garants-wrapper-item{
+    width: 762px !important;
+  }
+
 }
 
 @media (max-width: 1260px){
@@ -1906,11 +1922,16 @@ p {
 }
 
 @media (max-width: 1214px) {
-  .menu-window.popup,
   .menu-popap {
     height: auto;
     padding: 50px;
     height: 800px !important;
+  }
+
+  .menu-window.popup{
+    height: auto;
+    padding: 50px;
+    height: 700px !important;
   }
 
   .company-services {
@@ -2016,8 +2037,11 @@ p {
   .main-content,
   .why-choose-us,
   .quiz,
+  .removing-hot,
   .objects-processor,
-  .sertifications{
+  .sertifications,
+  .destruction,
+   .fog-item{
     margin-top: 90px !important;
   }
 
@@ -2052,6 +2076,10 @@ p {
   .company-services2:last-child a {
     font-size: 20px;
     padding: 16px 8px !important;
+  }
+
+  .menu-window.popup{
+    height: 800px !important;
   }
 
 
@@ -2164,14 +2192,15 @@ p {
   }
 
 
-  .description-content{
+  .description-content,
+  .organisation-content{
     margin-top: 65px !important;
   }
 
   .example-content{
     flex-direction: column !important;
     gap: 20px !important;
-    margin-top: 60px !important;
+    margin-top: 70px !important;
   }
 
 .example-text-content{
@@ -2286,6 +2315,10 @@ p {
     width: 680px !important;
   }
 
+  .fog-images-item-inner{
+    width: 60% !important;
+  }
+
 }
 
 @media (max-width: 1060px){
@@ -2357,27 +2390,6 @@ p {
 }
 
 
-@media (max-width: 1016px) {
-
-  .dezinfekciya-wrapper,
-  .more-services-bottom,
-  .more-services-left {
-    width: 100% !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-direction: column !important;
-  }
-
-  .price-disin
-  
-  {
-    margin-top: 40px !important;
-  }
-
-}
-
-
-
 
 
 @media (max-width: 950px) {
@@ -2407,33 +2419,6 @@ p {
   .company-services2:last-child a {
     font-size: 16px !important;
   }
-
-  .dezinfekciya-item {
-    gap: 80px !important;
-  }
-
-  .dezinfekciya-item a {
-    gap: 60px !important;
-  }
-
-  .dezinfekciya-item .contnt-wrapper {
-    width: 300px !important;
-  }
-
-  .dezinfekciya-wrapper {
-    justify-content: center !important;
-  }
-
-  .dezinfekciya-heding h2 {
-    font-size: 40px !important;
-  }
-
-  .dezinfekciya-heding p {
-    font-size: 20px;
-    text-align: center;
-  }
-
-
 
   .why-choose-us-content-wrapper h2 {
     font-size: 32px;
@@ -2692,7 +2677,6 @@ p {
 
   .more-services-left,
   .more-services-bottom,
-  .dezinfekciya-wrapper,
   .company-services1,
   .company-services2,
   .company-services2:last-child a {
@@ -2755,15 +2739,20 @@ p {
     width: 100% !important;
   }
 
-  .menu-window.popup,
+  .menu-window.popup{
+    height: 1350px !important;
+  }
+
   .menu-popap {
-    height: 1300px !important;
+    height: 1400px !important;
   }
 
   .garants-wrapper-item, 
 .why-rfdez-item{
 width: 100% !important;
 }
+
+
 }
 
 
@@ -2832,6 +2821,10 @@ width: 100% !important;
   .menu-window.popup, 
   .menu-popap{
     padding: 30px 20px !important;
+  }
+
+  .menu-popap{
+    height: 1300px !important;
   }
    .sertifikation-wrapper{
     margin-left: -20px !important;
@@ -3017,7 +3010,8 @@ width: 100% !important;
 }
 
    .example-content{
-    margin-top: 30px !important;
+    margin-top: 3
+    50px !important;
    }
 
    .icon-service-type{
@@ -3030,7 +3024,7 @@ width: 100% !important;
 }
 
 .fog-images-item-inner{
-  width: 70% !important;
+  width: 60% !important;
   height: auto !important;
 }
 
@@ -3095,9 +3089,13 @@ width: 100% !important;
     .company-wrapper-content,
     .why-rfdez,
     .garants,
+    .removing-hot,
     .main-content,
     .why-choose-us.arrow-black.quiz,
-    .objects-processor{
+    .objects-processor,
+    .destruction,
+     .fog-item,
+     .organisation-content{
     margin-top: 60px !important;
   }
     .methodes   {
@@ -3114,8 +3112,11 @@ width: 100% !important;
 
   .methodes-wraper,
   .contact-container-contacts,
-  .garants-wrapper{
-    margin-top: 40px !important;
+  .garants-wrapper,
+  .destruction-content-right,
+  .destruction-content,
+  .destruction-content-right{
+    margin-top: 50px !important;
   }
 
   .clients-content{
@@ -3140,26 +3141,8 @@ width: 100% !important;
     display: none;
   }
 
-  .price-disinsection,
-  .dezinfekciya-item {
-    width: 290px !important;
-    padding: 15px !important;
-  }
 
-  .price-disinsection-h3,
-  .dezinfekciya-item h3 {
-    font-size: 20px !important;
-  }
-
-  .price-disinsection-h4,
-  .dezinfekciya-item h4 {
-    font-size: 18px !important;
-  }
-
-  .price-disinsection-p,
-  .dezinfekciya-item p {
-    font-size: 16px !important;
-  }
+  
 
   .header-item2 {
     align-items: center;
@@ -3407,14 +3390,6 @@ width: 100% !important;
 }
 
 
-
-@media (max-width: 474px) {
-
-   .dezinfekciya-item a {
-    gap: 20px !important;
-  }
-
-}
 
 
 
