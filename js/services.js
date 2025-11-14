@@ -1,4 +1,4 @@
-// menu popap
+///бургр мену
 const burger = document.getElementById('burger');
 const burgerIcon = document.getElementById('burgerIcon');
 const menuPopap = document.getElementById('menuPopap');
@@ -16,15 +16,15 @@ burger.addEventListener('click', () => {
 
   if (menuPopap.classList.contains('active')) {
     menuPopap.style.display = 'block';
-    burgerIcon.src = "assets/images/ui/close.png";
+    burgerIcon.src = "images/ui/close.png";
   } else {
     menuPopap.style.display = 'none';
-    burgerIcon.src = "assets/images/ui/burger-menu.png";
+    burgerIcon.src = "images/ui/burger-menu.png";
   }
 });
 
 
-//more services
+//ВЕСЬ СПИСОК УСЛУГ ПО ДЕЗИНСЕКЦИИ
 
 document.querySelectorAll('.service-link').forEach(link => {
   link.addEventListener('click', function (e) {
@@ -34,7 +34,7 @@ document.querySelectorAll('.service-link').forEach(link => {
 });
 
 
-//contact-form
+//отправка Заполните форму
 const form = document.getElementById('contactForm');
 const popup = document.getElementById('popup');
 
@@ -85,7 +85,7 @@ window.addEventListener('click', (e) => {
 });
 
 
-//scroll effects
+////Элементы будут плавно появляться при скролле страницы
 document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".dezinfekciya-item");
 
@@ -102,3 +102,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     items.forEach(item => observer.observe(item));
   });
+
+    // попап городов
+
+  const modal = document.getElementById("townModal");
+  const closeBtn = document.getElementById("townModalClose");
+
+  document.querySelectorAll('.dezinfekciya-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+          e.preventDefault();
+          modal.style.display = "flex";
+      });
+  });
+
+  closeBtn.addEventListener('click', function() {
+      modal.style.display = "none";
+  });
+
+  window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+          modal.style.display = "none";
+      }
+  });
+
+    //////
+
+const modalScr = document.getElementById("townModal");
+const closeBtnScr = document.getElementById("townModalClose");
+
+document.querySelectorAll('.dezinfekciya-item').forEach(item => {
+  item.addEventListener('click', function(e) {
+    e.preventDefault();
+    modalScr.style.display = "flex";
+    document.body.classList.add("modal-open"); 
+  });
+});
+
+closeBtnScr.addEventListener('click', function() {
+  modalScr.style.display = "none";
+  document.body.classList.remove("modal-open");
+});
+
+window.addEventListener('click', function(e) {
+  if (e.target === modalScr) {
+    modalScr.style.display = "none";
+    document.body.classList.remove("modal-open");
+  }
+});

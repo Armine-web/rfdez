@@ -1,4 +1,4 @@
-//updatae ofline vs online
+//Обновление офлайн
 function updateStatus() {
   const statusIndicator = document.getElementById('status-indicator');
 
@@ -16,7 +16,7 @@ updateStatus();
 window.addEventListener('online', updateStatus);
 window.addEventListener('offline', updateStatus);
 
-///burger menu
+///бургр мену
 const container = document.querySelector('.container'); 
 const burger = document.getElementById('burger');
 const burgerIcon = document.getElementById('burgerIcon');
@@ -33,14 +33,22 @@ burger.addEventListener('click', () => {
   popupMenu.classList.toggle('active');
 
   if (burger.classList.contains('active')) {
-    burgerIcon.src = "assets/images/ui/close.png";
+    burgerIcon.src = "images/ui/close.png";
+    document.body.classList.add('menu-open');
   } else {
-    burgerIcon.src = "assets/images/ui/burger-menu.png";
+    burgerIcon.src = "images/ui/burger-menu.png";
+    document.body.classList.remove('menu-open');  
   }
 });
 
 
-//more services
+////////////////
+document.querySelector('.menu-window').classList.add('active');
+document.body.classList.add('menu-open');
+
+
+
+//ВЕСЬ СПИСОК УСЛУГ ПО ДЕЗИНСЕКЦИИ
 
 document.querySelectorAll('.service-link').forEach(link => {
   link.addEventListener('click', function (e) {
@@ -50,7 +58,7 @@ document.querySelectorAll('.service-link').forEach(link => {
 });
 
 
-//towns-slider
+//слайдер городов
 const track = document.querySelector('.quiz-town-connetn');
 const prev = document.querySelector('.arrow-left');
 const next = document.querySelector('.quiz-arrow-right');
@@ -82,46 +90,47 @@ function updateSlider() {
   const totalColumns = Math.ceil(totalItems / rows);
   const totalPages = Math.ceil(totalColumns / columnsPerPage);
 
-  if (currentPage >= totalPages) currentPage = totalPages - 1;
 
+  prev.style.visibility = 'visible';
+  next.style.visibility = 'visible';
+
+  
   const offset = currentPage * columnsPerPage * movePerColumn;
   track.style.transform = `translateX(-${offset}px)`;
-
-
-  if (currentPage === 0) {
-    prev.style.visibility = 'hidden';
-  } else {
-    prev.style.visibility = 'visible';
-  }
-
-  if (currentPage >= totalPages - 1) {
-    next.style.visibility = 'hidden';
-  } else {
-    next.style.visibility = 'visible';
-  }
 }
 
+
 prev.addEventListener('click', () => {
-  if (currentPage > 0) {
+  const totalColumns = Math.ceil(totalItems / rows);
+  const totalPages = Math.ceil(totalColumns / columnsPerPage);
+
+  if (currentPage === 0) {
+    currentPage = totalPages - 1;      
+  } else {
     currentPage--;
-    updateSlider();
   }
+
+  updateSlider();
 });
 
 next.addEventListener('click', () => {
   const totalColumns = Math.ceil(totalItems / rows);
   const totalPages = Math.ceil(totalColumns / columnsPerPage);
-  if (currentPage < totalPages - 1) {
+
+  if (currentPage >= totalPages - 1) {
+    currentPage = 0;                   
+  } else {
     currentPage++;
-    updateSlider();
   }
+
+  updateSlider();
 });
 
 window.addEventListener('load', updateSlider);
 window.addEventListener('resize', updateSlider);
 
 
-// quiz
+// викторина
 document.addEventListener("DOMContentLoaded", function () {
   function extractStepNumberFromClasses(element) {
     for (const className of Array.from(element.classList)) {
@@ -286,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-//contact-form
+//отправка Заполните форму
 const form = document.getElementById('contactForm');
 const popup = document.getElementById('popup');
 
@@ -337,7 +346,7 @@ window.addEventListener('click', (e) => {
 });
 
 
-//scroll effects
+//Элементы будут плавно появляться при скролле страницы
 document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".dezinfekciya-item");
 
@@ -355,13 +364,11 @@ document.addEventListener("DOMContentLoaded", () => {
     items.forEach(item => observer.observe(item));
   });
 
-  // towns popap
+  // попап городов
 
- 
   const modal = document.getElementById("townModal");
   const closeBtn = document.getElementById("townModalClose");
 
-  // Բացում ենք մոդալը կլիկով dezinfekciya-item-ի վրա
   document.querySelectorAll('.dezinfekciya-item').forEach(item => {
       item.addEventListener('click', function(e) {
           e.preventDefault();
@@ -373,10 +380,38 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.display = "none";
   });
 
-  // Փակում ենք դրսի վրա կլիկ անելուց
   window.addEventListener('click', function(e) {
       if (e.target === modal) {
           modal.style.display = "none";
       }
   });
+
+  //////
+
+const modalScr = document.getElementById("townModal");
+const closeBtnScr = document.getElementById("townModalClose");
+
+document.querySelectorAll('.dezinfekciya-item').forEach(item => {
+  item.addEventListener('click', function(e) {
+    e.preventDefault();
+    modalScr.style.display = "flex";
+    document.body.classList.add("modal-open"); 
+  });
+});
+
+closeBtnScr.addEventListener('click', function() {
+  modalScr.style.display = "none";
+  document.body.classList.remove("modal-open");
+});
+
+window.addEventListener('click', function(e) {
+  if (e.target === modalScr) {
+    modalScr.style.display = "none";
+    document.body.classList.remove("modal-open");
+  }
+});
+
+
+
+
 
