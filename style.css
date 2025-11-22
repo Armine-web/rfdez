@@ -691,7 +691,7 @@ body.modal-open {
 }
 
 .town-modal-content {
-  width: 60%;
+  width: 70%;
   max-height: 70vh; 
   background: #fff;
   border: 2px solid #d3c3ad;
@@ -702,9 +702,9 @@ body.modal-open {
 }
 
 .town-modal-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
+  position: sticky;
+  top: 0;
+  float: right;
   font-size: 40px;
   cursor: pointer;
   color: #333;
@@ -1921,6 +1921,8 @@ body.modal-open {
     padding: 70px 3% 50px 3% !important;
   }
 
+
+
   .footer-bootton-wrapper a, 
   .footer-bootton-wrapper p{
     font-size: 14px !important;
@@ -2343,6 +2345,22 @@ body.modal-open {
 
 .quiz-options div h3 {
   font-size: 22px !important;
+}
+.quiz-towns {
+  width: 80% !important;
+  margin: auto !important;
+}
+
+.quiz-h3-wrapper {
+  flex-direction: column !important;
+  width: 100% !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
+
+.quiz-button-wrapper {
+  width: 1005px !important;
+  justify-content: flex-start !important;
 }
 
 .objects-processor{
@@ -2858,17 +2876,15 @@ body.modal-open {
   }
 
    .disinfection-services{
-    flex-basis: 155px !important;
     padding-left: 5px !important;
    }
 
    .disinfection-services p{
-    font-size: 10px !important;
+    font-size: 12px !important;
    }
 
   .license-info{
-    flex-basis: 173px !important;
-    width: 173px !important;
+    width: 200px !important;
   }
 
   .license-info img{
@@ -2877,7 +2893,7 @@ body.modal-open {
   }
 
   .license-info p{
-    font-size: 10px !important;
+    font-size: 12px !important;
   }
 
   .call-specialist-wrapper{
@@ -2994,7 +3010,7 @@ body.modal-open {
 }
 
 .footer-top-wrapper{
-  width: 60% !important;
+  width: 98% !important;
 }
 
 .full-loop{
@@ -3454,6 +3470,11 @@ textarea,
   font-size: 16px !important;
 }
 
+.footer-bootton-wrapper{
+  flex-direction: column !important;
+  gap: 15px !important;
+}
+
 
 }
 
@@ -3479,25 +3500,22 @@ textarea,
 
 
 .disinfection-services {
-  grid-column: 1 !important;
-  grid-row: 2 !important;
+  display: none !important;
 }
 
 .license-info {
-  grid-column: 2 !important;
-  grid-row: 2 !important;
-  justify-self: end !important;
+  display: none !important;
 }
 
 
 .call-specialist-wrapper {
   grid-column: 1 !important;
-  grid-row: 3 !important;
+  grid-row: 2 !important;
 }
 
 .working-now-wrapper {
   grid-column: 2 !important;
-  grid-row: 3 !important;
+  grid-row: 2 !important;
   justify-self: end !important;
 }
 
@@ -3805,12 +3823,21 @@ footer {
 }
 
 .town-modal-content h3{
-  margin-top: 40px !important;
+  margin-top: -30px !important;
   font-size: 22px !important;
+}
+
+.town-modal-close-icon{
+  width: 30px !important;
+}
+
+.town-modal-inner {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .town-modal-content {
   width: 80% !important;
+  padding: 40px 10px !important;
 }
 
 .town-modal-inner{
@@ -4102,6 +4129,26 @@ footer {
 .fast-call-title p {
   width: 180px !important;
 }
+.company-services-wrapper {
+  margin-top: 50px !important;
+}
+
+.company-services-wrapper p,
+.company-services-wrapper .company-services{
+  display: none !important;
+}
+
+.menu-window.popup {
+  height: 820px !important;
+}
+
+.company-services{
+  justify-content: center !important;
+}
+
+.company-services2:last-child {
+  align-items: center !important;
+}
 
 .fast-call-btn {
   font-size: 14px !important;
@@ -4116,7 +4163,7 @@ footer {
 }
 
 .contact-form {
-  width: 280px !important;
+  width: 98% !important;
 }
 
 .caontact-btn{
@@ -4127,8 +4174,16 @@ footer {
   margin-right: -35px !important;
 }
 
+.footer-right {
+  gap: 20px !important;
+}
+
+.footer-right a{
+  font-size: 12px !important;
+}
+
 .footer-top-wrapper{
-  align-items: flex-start !important;
+  align-items: center !important;
 }
 
 footer{
@@ -4137,6 +4192,15 @@ footer{
 
 .footer-wrapper {
   padding: 50px 3% 30px 3% !important;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px !important;
+}
+
+.flug {
+  width: 25px !important;
 }
 .contnt-wrapper h3 {
   font-size: 24px !important;
