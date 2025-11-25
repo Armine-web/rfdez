@@ -42,11 +42,6 @@ burger.addEventListener('click', () => {
 });
 
 
-////////////////
-document.querySelector('.menu-window').classList.add('active');
-document.body.classList.add('menu-open');
-
-
 
 //ВЕСЬ СПИСОК УСЛУГ ПО ДЕЗИНСЕКЦИИ
 
@@ -254,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const message = form.querySelector("textarea")?.value.trim() || "";
       answers["Дополнительная информация"] = message || "—";
 
-      const phoneNumber = "79237167543";
+      const phoneNumber = "";
       let text = "Здравствуйте! Хочу получить расчет стоимости.%0A";
       for (const [question, answer] of Object.entries(answers)) {
         text += `*${question}:* ${answer}%0A`;
