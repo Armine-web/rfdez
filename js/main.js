@@ -26,7 +26,7 @@ const popupMenu = staticMenu.cloneNode(true);
 popupMenu.classList.add('popup');
 popupMenu.removeAttribute('id'); 
 
-container.appendChild(popupMenu);
+document.body.appendChild(popupMenu);
 
 burger.addEventListener('click', () => {
   burger.classList.toggle('active');
